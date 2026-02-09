@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Actor Name — Home</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+  <header class="nav">
+    <div class="container nav-inner">
+      <div class="brand">
+        <div class="brand-badge">AN</div>
+        <div>Actor Name</div>
+      </div>
+      <nav class="nav-links">
+        <a class="active" href="index.html">Home</a>
+        <a href="resume.html">Resume</a>
+        <a href="video.html">Video</a>
+        <a href="gallery.html">Photos</a>
+        <a href="about.html">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container hero">
+    <div class="card hero-card">
+      <div>
+        <h1 class="h1">Actor Name</h1>
+        <p class="sub">Location • Union status • Representation • Contact</p>
+
+        <div class="pills">
+          <div class="pill">Film</div>
+          <div class="pill">TV</div>
+          <div class="pill">Theatre</div>
+          <div class="pill">Commercial</div>
+        </div>
+
+        <div class="kv">
+          <span>Height: 5'10"</span>
+          <span>Hair: Brown</span>
+          <span>Eyes: Hazel</span>
+          <span>Local hire: LA / NYC</span>
+        </div>
+
+        <div class="actions">
+          <a class="btn primary" href="video.html">Watch Reel</a>
+          <a class="btn" href="resume.html">View Resume</a>
+          <a class="btn" href="gallery.html">Photo Gallery</a>
+        </div>
+      </div>
+
+      <div class="block card" style="background: var(--surface);">
+        <h2 style="margin:0 0 10px;">Quick Contact</h2>
+        <p style="margin:0 0 10px; color: var(--muted);">
+          Email and representation details.
+        </p>
+        <hr class="sep" />
+        <p style="margin:0;"><strong>Email:</strong> name@email.com</p>
+        <p style="margin:6px 0 0;"><strong>Agent/Manager:</strong> Name • Agency • Phone</p>
+        <p style="margin:6px 0 0;"><strong>IMDb:</strong> <a href="#" target="_blank" rel="noopener">Profile link</a></p>
+      </div>
+    </div>
+  </main>
+
+  <section class="container section">
+    <div class="grid three">
+      <div class="card block">
+        <h2>Resume</h2>
+        <p>Credits, training, and skills in a clean format.</p>
+        <div class="actions"><a class="btn" href="resume.html">Open Resume</a></div>
+      </div>
+      <div class="card block">
+        <h2>Video</h2>
+        <p>Reel + scene clips embedded and mobile-friendly.</p>
+        <div class="actions"><a class="btn" href="video.html">Open Video</a></div>
+      </div>
+      <div class="card block">
+        <h2>Photos</h2>
+        <p>Headshots in a responsive gallery grid.</p>
+        <div class="actions"><a class="btn" href="gallery.html">Open Photos</a></div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      © <span id="year"></span> Actor Name • Built with GitHub Pages
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

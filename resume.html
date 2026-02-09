@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Actor Name — Resume</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+  <header class="nav">
+    <div class="container nav-inner">
+      <div class="brand"><div class="brand-badge">AN</div><div>Actor Name</div></div>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a class="active" href="resume.html">Resume</a>
+        <a href="video.html">Video</a>
+        <a href="gallery.html">Photos</a>
+        <a href="about.html">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container section">
+    <div class="card block">
+      <h1 class="h1" style="margin-bottom:6px;">Resume</h1>
+      <p class="sub">Download the PDF and see a quick web version below.</p>
+
+      <div class="actions">
+        <a class="btn primary" href="assets/resume.pdf" target="_blank" rel="noopener">Download PDF</a>
+        <a class="btn" href="about.html">About Me</a>
+      </div>
+
+      <hr class="sep" />
+
+      <div class="grid two">
+        <div>
+          <h2>Film / TV</h2>
+          <p><strong>Project Title</strong> — Role (Director / Studio)</p>
+          <p><strong>Project Title</strong> — Role (Director / Studio)</p>
+          <p><strong>Project Title</strong> — Role (Director / Studio)</p>
+
+          <hr class="sep" />
+
+          <h2>Theatre</h2>
+          <p><strong>Show Title</strong> — Role (Venue / Director)</p>
+          <p><strong>Show Title</strong> — Role (Venue / Director)</p>
+        </div>
+
+        <div>
+          <h2>Training</h2>
+          <p>Studio / Coach — Focus</p>
+          <p>Studio / Coach — Focus</p>
+
+          <hr class="sep" />
+
+          <h2>Skills</h2>
+          <div class="pills">
+            <div class="pill">Dialects</div>
+            <div class="pill">Stage combat</div>
+            <div class="pill">Singing</div>
+            <div class="pill">Improvisation</div>
+          </div>
+
+          <h2>Stats</h2>
+          <div class="kv">
+            <span>Height: —</span>
+            <span>Weight: —</span>
+            <span>Hair: —</span>
+            <span>Eyes: —</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <footer class="footer"><div class="container">© <span id="year"></span> Actor Name</div></footer>
+  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+</body>
+</html>

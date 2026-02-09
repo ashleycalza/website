@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Actor Name — About</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+  <header class="nav">
+    <div class="container nav-inner">
+      <div class="brand"><div class="brand-badge">AN</div><div>Actor Name</div></div>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="resume.html">Resume</a>
+        <a href="video.html">Video</a>
+        <a href="gallery.html">Photos</a>
+        <a class="active" href="about.html">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container section">
+    <div class="card block">
+      <h1 class="h1" style="margin-bottom:6px;">About Me</h1>
+      <p class="sub">Short bio for casting + a few personal differentiators.</p>
+
+      <div class="grid two">
+        <div>
+          <h2>Bio</h2>
+          <p>
+            Write a tight, casting-friendly paragraph here: training, recent credits,
+            the “type” you book, and what makes you distinct.
+          </p>
+
+          <hr class="sep" />
+
+          <h2>Representation</h2>
+          <p><strong>Agent:</strong> Name — Agency — Phone</p>
+          <p><strong>Manager:</strong> Name — Company — Phone</p>
+          <p><strong>Email:</strong> name@email.com</p>
+        </div>
+
+        <div>
+          <h2>Quick Facts</h2>
+          <div class="kv">
+            <span>Location: —</span>
+            <span>Union: —</span>
+            <span>Local hire: —</span>
+            <span>Passport: —</span>
+          </div>
+
+          <hr class="sep" />
+
+          <h2>Links</h2>
+          <p><a href="#" target="_blank" rel="noopener">IMDb</a></p>
+          <p><a href="#" target="_blank" rel="noopener">Instagram</a></p>
+          <p><a href="#" target="_blank" rel="noopener">Casting Networks</a></p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer"><div class="container">© <span id="year"></span> Actor Name</div></footer>
+  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+</body>
+</html>

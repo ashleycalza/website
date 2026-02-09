@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Actor Name — Video</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+  <header class="nav">
+    <div class="container nav-inner">
+      <div class="brand"><div class="brand-badge">AN</div><div>Actor Name</div></div>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="resume.html">Resume</a>
+        <a class="active" href="video.html">Video</a>
+        <a href="gallery.html">Photos</a>
+        <a href="about.html">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container section">
+    <div class="card block">
+      <h1 class="h1" style="margin-bottom:6px;">Video</h1>
+      <p class="sub">Embed your reel from YouTube or Vimeo.</p>
+
+      <h2>Reel</h2>
+      <div class="media">
+        <!-- Replace the src with your YouTube/Vimeo embed link -->
+        <iframe
+          width="100%" height="100%"
+          src="https://www.youtube.com/embed/VIDEO_ID"
+          title="Actor Reel"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        ></iframe>
+      </div>
+
+      <hr class="sep" />
+
+      <h2>Clips</h2>
+      <div class="grid two">
+        <div class="media">
+          <iframe width="100%" height="100%" src="https://www.youtube.com/embed/VIDEO_ID_2" title="Clip 1" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <div class="media">
+          <iframe width="100%" height="100%" src="https://www.youtube.com/embed/VIDEO_ID_3" title="Clip 2" frameborder="0" allowfullscreen></iframe>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <footer class="footer"><div class="container">© <span id="year"></span> Actor Name</div></footer>
+  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+</body>
+</html>

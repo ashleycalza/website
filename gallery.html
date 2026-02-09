@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Actor Name — Photos</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+  <header class="nav">
+    <div class="container nav-inner">
+      <div class="brand"><div class="brand-badge">AN</div><div>Actor Name</div></div>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="resume.html">Resume</a>
+        <a href="video.html">Video</a>
+        <a class="active" href="gallery.html">Photos</a>
+        <a href="about.html">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container section">
+    <div class="card block">
+      <h1 class="h1" style="margin-bottom:6px;">Photo Gallery</h1>
+      <p class="sub">Add headshots to <code>assets/headshots/</code> and update filenames below.</p>
+
+      <div class="gallery">
+        <img src="assets/headshots/headshot-1.jpg" alt="Headshot 1" />
+        <img src="assets/headshots/headshot-2.jpg" alt="Headshot 2" />
+        <img src="assets/headshots/headshot-3.jpg" alt="Headshot 3" />
+        <img src="assets/headshots/headshot-4.jpg" alt="Headshot 4" />
+        <img src="assets/headshots/headshot-5.jpg" alt="Headshot 5" />
+        <img src="assets/headshots/headshot-6.jpg" alt="Headshot 6" />
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer"><div class="container">© <span id="year"></span> Actor Name</div></footer>
+  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+</body>
+</html>
