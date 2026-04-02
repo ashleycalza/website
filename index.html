@@ -1,97 +1,137 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Actor Name — Home</title>
-  <link rel="stylesheet" href="css/styles.css" />
-</head>
-<body>
+<!DOCTYPE html>
 
-  <header class="nav">
-    <div class="container nav-inner">
-      <div class="brand">
-        <div class="brand-badge">AN</div>
-        <div>Actor Name</div>
-      </div>
-      <nav class="nav-links">
-        <a class="active" href="index.html">Home</a>
-        <a href="resume.html">Resume</a>
-        <a href="video.html">Video</a>
-        <a href="gallery.html">Photos</a>
-        <a href="about.html">About</a>
-      </nav>
-    </div>
-  </header>
-
-  <main class="container hero">
-    <div class="card hero-card">
-      <div>
-        <h1 class="h1">Actor Name</h1>
-        <p class="sub">Location • Union status • Representation • Contact</p>
-
-        <div class="pills">
-          <div class="pill">Film</div>
-          <div class="pill">TV</div>
-          <div class="pill">Theatre</div>
-          <div class="pill">Commercial</div>
-        </div>
-
-        <div class="kv">
-          <span>Height: 5'10"</span>
-          <span>Hair: Brown</span>
-          <span>Eyes: Hazel</span>
-          <span>Local hire: LA / NYC</span>
-        </div>
-
-        <div class="actions">
-          <a class="btn primary" href="video.html">Watch Reel</a>
-          <a class="btn" href="resume.html">View Resume</a>
-          <a class="btn" href="gallery.html">Photo Gallery</a>
-        </div>
-      </div>
-
-      <div class="block card" style="background: var(--surface);">
-        <h2 style="margin:0 0 10px;">Quick Contact</h2>
-        <p style="margin:0 0 10px; color: var(--muted);">
-          Email and representation details.
-        </p>
-        <hr class="sep" />
-        <p style="margin:0;"><strong>Email:</strong> name@email.com</p>
-        <p style="margin:6px 0 0;"><strong>Agent/Manager:</strong> Name • Agency • Phone</p>
-        <p style="margin:6px 0 0;"><strong>IMDb:</strong> <a href="#" target="_blank" rel="noopener">Profile link</a></p>
-      </div>
-    </div>
-  </main>
-
-  <section class="container section">
-    <div class="grid three">
-      <div class="card block">
-        <h2>Resume</h2>
-        <p>Credits, training, and skills in a clean format.</p>
-        <div class="actions"><a class="btn" href="resume.html">Open Resume</a></div>
-      </div>
-      <div class="card block">
-        <h2>Video</h2>
-        <p>Reel + scene clips embedded and mobile-friendly.</p>
-        <div class="actions"><a class="btn" href="video.html">Open Video</a></div>
-      </div>
-      <div class="card block">
-        <h2>Photos</h2>
-        <p>Headshots in a responsive gallery grid.</p>
-        <div class="actions"><a class="btn" href="gallery.html">Open Photos</a></div>
-      </div>
-    </div>
-  </section>
-
-  <footer class="footer">
-    <div class="container">
-      © <span id="year"></span> Actor Name • Built with GitHub Pages
-    </div>
-  </footer>
-
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;700&amp;family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "on-tertiary-fixed-variant": "#454747",
+            "surface-tint": "#b9c7e4",
+            "on-error-container": "#ffdad6",
+            "on-tertiary-fixed": "#1a1c1c",
+            "secondary-fixed-dim": "#e9c176",
+            "on-primary": "#233148",
+            "surface-variant": "#353534",
+            "on-secondary-fixed": "#261900",
+            "primary-fixed-dim": "#b9c7e4",
+            "surface-container-lowest": "#0e0e0e",
+            "tertiary-fixed-dim": "#c6c6c6",
+            "on-surface-variant": "#c5c6cd",
+            "outline-variant": "#44474d",
+            "tertiary-container": "#171919",
+            "on-primary-fixed-variant": "#39475f",
+            "secondary-fixed": "#ffdea5",
+            "inverse-surface": "#e5e2e1",
+            "secondary-container": "#604403",
+            "surface": "#131313",
+            "inverse-primary": "#515f78",
+            "on-tertiary-container": "#818282",
+            "surface-container-high": "#2a2a2a",
+            "on-secondary": "#412d00",
+            "background": "#131313",
+            "on-surface": "#e5e2e1",
+            "surface-container-highest": "#353534",
+            "on-background": "#e5e2e1",
+            "surface-dim": "#131313",
+            "surface-bright": "#393939",
+            "on-tertiary": "#2f3131",
+            "error-container": "#93000a",
+            "primary-container": "#0a192f",
+            "on-primary-fixed": "#0d1c32",
+            "primary": "#b9c7e4",
+            "secondary": "#e9c176",
+            "on-secondary-container": "#dab36a",
+            "outline": "#8f9097",
+            "inverse-on-surface": "#313030",
+            "on-secondary-fixed-variant": "#5d4201",
+            "tertiary": "#c6c6c6",
+            "error": "#ffb4ab",
+            "on-primary-container": "#74829d",
+            "tertiary-fixed": "#e2e2e2",
+            "primary-fixed": "#d6e3ff",
+            "surface-container": "#201f1f",
+            "surface-container-low": "#1c1b1b",
+            "on-error": "#690005"
+          },
+          fontFamily: {
+            "headline": ["Newsreader", "serif"],
+            "body": ["Manrope", "sans-serif"],
+            "label": ["Manrope", "sans-serif"]
+          },
+          borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+        },
+      },
+    }
   </script>
-</body>
-</html>
+<style>
+    .headlines-newsreader { font-family: 'Newsreader', serif; }
+    .body-manrope { font-family: 'Manrope', sans-serif; }
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+    }
+    .vignette-overlay {
+      background: radial-gradient(circle at center, transparent 0%, rgba(19, 19, 19, 0.8) 100%);
+    }
+  </style>
+</head>
+<body class="bg-background text-on-surface selection:bg-secondary selection:text-on-secondary">
+<!-- TopNavBar Navigation Shell -->
+<nav class="fixed top-0 w-full z-50 bg-neutral-900/70 backdrop-blur-xl border-none">
+<div class="flex justify-between items-center px-8 py-6 w-full max-w-screen-2xl mx-auto">
+<div class="text-2xl font-serif italic text-blue-200 dark:text-blue-100">
+        Ashley Calza
+      </div>
+<!-- Desktop Links -->
+<div class="hidden md:flex items-center gap-10">
+<a class="font-serif text-lg tracking-tight headlines-newsreader text-amber-200 font-bold border-b border-amber-200/50 pb-1 hover:scale-105 duration-400 ease-in-out" href="index.html">Home</a>
+<a class="font-serif text-lg tracking-tight headlines-newsreader text-neutral-300 hover:text-blue-100 transition-colors hover:scale-105 duration-400 ease-in-out" href="about.html">About</a>
+<a class="font-serif text-lg tracking-tight headlines-newsreader text-neutral-300 hover:text-blue-100 transition-colors hover:scale-105 duration-400 ease-in-out" href="casting.html">Casting</a>
+<a class="font-serif text-lg tracking-tight headlines-newsreader text-neutral-300 hover:text-blue-100 transition-colors hover:scale-105 duration-400 ease-in-out" href="gallery.html">Gallery</a>
+<a class="font-serif text-lg tracking-tight headlines-newsreader text-neutral-300 hover:text-blue-100 transition-colors hover:scale-105 duration-400 ease-in-out" href="contact.html">Contact</a>
+</div>
+<div class="w-24 md:hidden"></div> <!-- Spacer for mobile symmetry -->
+</div>
+</nav>
+<main>
+<!-- Hero Section -->
+<section class="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
+<div class="absolute inset-0 z-0">
+<img alt="Ashley Calza Headshot" class="w-full h-full object-cover grayscale opacity-60" src="assets/IMG_1305.JPG"/>
+<div class="absolute inset-0 vignette-overlay"></div>
+</div>
+<div class="relative z-10 w-full max-w-screen-xl px-8 md:px-12 flex flex-col items-center text-center">
+<span class="font-label text-sm uppercase tracking-[0.2em] text-secondary mb-6 block">Actor • Singer • Dancer</span>
+<h1 class="font-headline text-7xl md:text-9xl text-on-surface leading-none tracking-tighter mb-8 italic">
+          Ashley <br/> <span class="not-italic text-primary">Calza</span>
+</h1>
+<p class="font-body text-xl md:text-2xl text-on-surface-variant max-w-2xl font-light leading-relaxed mb-12">A versatile triple-threat performer, Ashley combines classical training with contemporary edge. From leading musical theater roles to intimate screen performances, she brings depth, precision, and raw emotion to every character.</p>
+<div class="flex flex-col sm:flex-row gap-6">
+<a href="gallery.html" class="bg-secondary text-on-secondary px-10 py-4 rounded font-bold tracking-widest uppercase text-sm hover:scale-[1.02] transition-all duration-400 shadow-xl inline-block text-center">
+  View Gallery
+</a>
+
+<a href="contact.html" class="bg-surface-container-high text-primary px-10 py-4 rounded font-bold tracking-widest uppercase text-sm hover:scale-[1.02] transition-all duration-400 border border-outline-variant/20 backdrop-blur-md inline-block text-center">
+  Contact Me
+</a>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer Shell -->
+<footer class="w-full border-t border-neutral-800/30 bg-neutral-950">
+<div class="flex flex-col md:flex-row justify-between items-center px-12 py-16 w-full max-w-screen-2xl mx-auto justify-center">
+<div class="font-sans text-xs tracking-widest uppercase text-neutral-400">
+  © 2026 Ashley Calza. All Rights Reserved.
+</div>
+</div>
+</footer>
+</body></html>

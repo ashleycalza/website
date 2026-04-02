@@ -1,43 +1,229 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Actor Name — Photos</title>
-  <link rel="stylesheet" href="css/styles.css" />
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Gallery | Ashley Calza</title>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600&amp;family=Manrope:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-tertiary-fixed-variant": "#454747",
+              "surface-tint": "#b9c7e4",
+              "on-error-container": "#ffdad6",
+              "on-tertiary-fixed": "#1a1c1c",
+              "secondary-fixed-dim": "#e9c176",
+              "on-primary": "#233148",
+              "surface-variant": "#353534",
+              "on-secondary-fixed": "#261900",
+              "primary-fixed-dim": "#b9c7e4",
+              "surface-container-lowest": "#0e0e0e",
+              "tertiary-fixed-dim": "#c6c6c6",
+              "on-surface-variant": "#c5c6cd",
+              "outline-variant": "#44474d",
+              "tertiary-container": "#171919",
+              "on-primary-fixed-variant": "#39475f",
+              "secondary-fixed": "#ffdea5",
+              "inverse-surface": "#e5e2e1",
+              "secondary-container": "#604403",
+              "surface": "#131313",
+              "inverse-primary": "#515f78",
+              "on-tertiary-container": "#818282",
+              "surface-container-high": "#2a2a2a",
+              "on-secondary": "#412d00",
+              "background": "#131313",
+              "on-surface": "#e5e2e1",
+              "surface-container-highest": "#353534",
+              "on-background": "#e5e2e1",
+              "surface-dim": "#131313",
+              "surface-bright": "#393939",
+              "on-tertiary": "#2f3131",
+              "error-container": "#93000a",
+              "primary-container": "#0a192f",
+              "on-primary-fixed": "#0d1c32",
+              "primary": "#b9c7e4",
+              "secondary": "#e9c176",
+              "on-secondary-container": "#dab36a",
+              "outline": "#8f9097",
+              "inverse-on-surface": "#313030",
+              "on-secondary-fixed-variant": "#5d4201",
+              "tertiary": "#c6c6c6",
+              "error": "#ffb4ab",
+              "on-primary-container": "#74829d",
+              "tertiary-fixed": "#e2e2e2",
+              "primary-fixed": "#d6e3ff",
+              "surface-container": "#201f1f",
+              "surface-container-low": "#1c1b1b",
+              "on-error": "#690005"
+            },
+            fontFamily: {
+              "headline": ["Newsreader"],
+              "body": ["Manrope"],
+              "label": ["Manrope"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+      .headlines-newsreader { font-family: 'Newsreader', serif; }
+      .body-manrope { font-family: 'Manrope', sans-serif; }
+      .glass-nav { backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
+      .vignette-overlay { background: radial-gradient(circle, transparent 0%, rgba(19, 19, 19, 0.4) 100%); }
+      
+      .gallery-scroll-container {
+        display: flex;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        scrollbar-width: none; /* Firefox */
+        -ms-overflow-style: none;  /* IE and Edge */
+      }
+      .gallery-scroll-container::-webkit-scrollbar {
+        display: none; /* Chrome, Safari and Opera */
+      }
+      .gallery-scroll-item {
+        flex: 0 0 auto;
+        scroll-snap-align: start;
+      }
+    </style>
 </head>
-<body>
-
-  <header class="nav">
-    <div class="container nav-inner">
-      <div class="brand"><div class="brand-badge">AN</div><div>Actor Name</div></div>
-      <nav class="nav-links">
-        <a href="index.html">Home</a>
-        <a href="resume.html">Resume</a>
-        <a href="video.html">Video</a>
-        <a class="active" href="gallery.html">Photos</a>
-        <a href="about.html">About</a>
-      </nav>
-    </div>
-  </header>
-
-  <main class="container section">
-    <div class="card block">
-      <h1 class="h1" style="margin-bottom:6px;">Photo Gallery</h1>
-      <p class="sub">Add headshots to <code>assets/headshots/</code> and update filenames below.</p>
-
-      <div class="gallery">
-        <img src="assets/headshots/headshot-1.jpg" alt="Headshot 1" />
-        <img src="assets/headshots/headshot-2.jpg" alt="Headshot 2" />
-        <img src="assets/headshots/headshot-3.jpg" alt="Headshot 3" />
-        <img src="assets/headshots/headshot-4.jpg" alt="Headshot 4" />
-        <img src="assets/headshots/headshot-5.jpg" alt="Headshot 5" />
-        <img src="assets/headshots/headshot-6.jpg" alt="Headshot 6" />
-      </div>
-    </div>
-  </main>
-
-  <footer class="footer"><div class="container">© <span id="year"></span> Actor Name</div></footer>
-  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
-</body>
-</html>
+<body class="bg-background text-on-surface selection:bg-secondary selection:text-on-secondary">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-neutral-900/70 backdrop-blur-xl flex justify-between items-center px-8 py-6 w-full max-w-screen-2xl mx-auto">
+<div class="text-2xl font-serif italic text-blue-200 dark:text-blue-100">Ashley Calza</div>
+<div class="hidden md:flex items-center space-x-12 font-serif text-lg tracking-tight headlines-newsreader">
+<a class="text-neutral-300 hover:text-blue-100 transition-colors hover:scale-105 duration-400 ease-in-out" href="index.html">Home</a>
+<a class="text-neutral-300 hover:text-blue-100 transition-colors hover:scale-105 duration-400 ease-in-out" href="about.html">About</a>
+<a class="text-neutral-300 hover:text-blue-100 transition-colors hover:scale-105 duration-400 ease-in-out" href="casting.html">Casting</a>
+<a class="text-amber-200 font-bold border-b border-amber-200/50 pb-1 hover:scale-105 duration-400 ease-in-out" href="gallery.html">Gallery</a>
+<a class="text-neutral-300 hover:text-blue-100 transition-colors hover:scale-105 duration-400 ease-in-out" href="contact.html">Contact</a>
+</div>
+<div></div> <!-- Placeholder for layout balance after button removal -->
+</nav>
+<main class="pt-32 pb-20">
+<!-- Hero Section / Title -->
+<section class="px-8 md:px-16 lg:px-24 mb-20 text-center">
+<h1 class="font-headline italic text-5xl md:text-7xl lg:text-8xl text-primary mb-4 tracking-tighter">Performance Archive</h1>
+<p class="font-label text-xs uppercase tracking-[0.3em] text-on-surface-variant max-w-lg mx-auto">Capturing the intensity, the grace, and the spotlight moments.</p>
+</section>
+<!-- Gallery Navigation / Filters (Semantic Surface Shift) -->
+<div class="sticky top-[88px] z-40 bg-surface/80 backdrop-blur-md py-6 mb-12 border-y border-outline-variant/10">
+<div class="max-w-screen-xl mx-auto px-8 flex flex-wrap justify-center gap-8">
+<a class="font-label text-xs uppercase tracking-widest text-secondary hover:text-primary transition-colors" href="#sound-of-music">The Sound of Music</a>
+<a class="font-label text-xs uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors" href="#west-side-story">West Side Story</a>
+<a class="font-label text-xs uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors" href="#rent">Rent</a>
+</div>
+</div>
+<!-- Section: The Sound of Music -->
+<section class="mb-32" id="sound-of-music">
+<div class="px-8 md:px-16 lg:px-24 flex flex-col md:flex-row md:items-end justify-between mb-8 border-b border-outline-variant/10 pb-6">
+<div>
+<span class="font-label text-[10px] uppercase tracking-[0.4em] text-on-surface-variant">Production Highlights</span>
+<h2 class="font-headline text-4xl md:text-5xl text-on-surface mt-2">The Sound of Music</h2>
+</div>
+<div class="mt-4 md:mt-0">
+<p class="font-body text-sm text-on-surface-variant italic">Role: Maria von Trapp • Lyric Theatre, 2023</p>
+</div>
+</div>
+<div class="gallery-scroll-container gap-6 px-8 md:px-16 lg:px-24 pb-8">
+<div class="gallery-scroll-item w-[85vw] md:w-[60vw] lg:w-[50vw] aspect-video relative group overflow-hidden bg-surface-container-low">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="dramatic wide shot of musical theatre actress as Maria singing on a mountain set with theatrical spotlights and lush green set pieces" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBLWI6fR5unFqt6f-DD8I380qyrY8NzYA_LzsxT-UuykTXiGa1jc4dkpuGq88V553C4w01o8qP16gpGVNLi1UDxaDuK7sfH8r3yigEiSm1snvwCUyLV2WmQbvzhGeo3Cimmuxi1e6Vb8eqU_CKpl1NZQPE0t4VjImyjWs-X7BDD1gxZ8UezziXQLJ_OOAA2z8bn0hDvxQ-hD-mwktdBMWwnYVJ5JVPQdA8KTkl_4o7QRRL4a0W51qNRcQywxTz_aV7DMTNr3rBv5rI"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-8">
+<p class="font-label text-xs uppercase tracking-widest text-secondary">Opening Number - "The Sound of Music"</p>
+</div>
+</div>
+<!-- Video Placeholder -->
+<div class="gallery-scroll-item w-[85vw] md:w-[60vw] lg:w-[50vw] aspect-video relative group overflow-hidden bg-surface-container-low">
+<img class="w-full h-full object-cover brightness-50 grayscale transition-transform duration-700 group-hover:scale-105" data-alt="Performance clip placeholder" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBfqIKHaz5yGd4PZ8JaafETbYCmUxeXKzJiAeUBmsKsuM1ji0x3zFzlEoclW6OO_dyGUyzs8S0MdwrQOnZtwYH9JoVIGlPSRULxDZF9bMtWdf1IXUtgMGd4ygDsJ6h8QZDzzDvII4zDmKLvcijwoZAs93uzDXwriXJKmIHW4TuNkIdfvuBIrzO1uGZUz0aMU9Q4sNLR90NsZsEx1xHrVP19LQ8hj2Oj9lPIel-qJ329J6KR4L9HiKiwDU7KHY2zgjSOMcs5Zrd6mXo"/>
+<a class="absolute inset-0 flex items-center justify-center" href="#">
+<div class="bg-secondary/90 w-16 h-16 rounded-full flex items-center justify-center text-on-secondary hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-4xl fill-1">play_arrow</span>
+</div>
+</a>
+<div class="absolute bottom-6 left-6 font-label text-[10px] uppercase tracking-widest text-white/70">Performance Reel: Clip 1</div>
+</div>
+<div class="gallery-scroll-item w-[85vw] md:w-[40vw] aspect-[3/4] relative group overflow-hidden bg-surface-container-low">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="theatrical performance of Maria singing to the von Trapp children in a bedroom set with soft moonlight shadows" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAYfDUErPb7UmJb6J75_LkDRDhaHkyg_W-9BsddaIftIDadP21N9AzL2ezDBKCreqrxLFRNiVlt5eGrw9c4qdi8v8wGBpEb9mBwfmOxBnTPd0oMdY8923_CA9_bmFnnJzK5wIDaYyP6UrUuCPR_neZx3KdkRiMBW_87JHvk07iu884hCJiGNGZzHLMELJkPmouNXF1WY6TTAvh09Rnx1J7p2w6HcnVcgzWBQdpASZXvcNLby5j5nne2usSyrer-ocFetyfgYkc5Swo"/>
+</div>
+</div>
+</section>
+<!-- Section: West Side Story -->
+<section class="bg-surface-container-low py-24 mb-32" id="west-side-story">
+<div class="px-8 md:px-16 lg:px-24 mb-12">
+<div class="max-w-screen-xl">
+<span class="font-label text-[10px] uppercase tracking-[0.4em] text-on-surface-variant">Production Highlights</span>
+<h2 class="font-headline text-4xl md:text-5xl text-primary mt-2 mb-6">West Side Story</h2>
+<div class="flex flex-wrap gap-2">
+<span class="bg-surface-variant text-on-surface-variant px-3 py-1 rounded-full font-label text-[10px] tracking-wider uppercase">Anita</span>
+<span class="bg-surface-variant text-on-surface-variant px-3 py-1 rounded-full font-label text-[10px] tracking-wider uppercase">Dance Captain</span>
+</div>
+</div>
+</div>
+<div class="gallery-scroll-container gap-6 px-8 md:px-16 lg:px-24">
+<div class="gallery-scroll-item w-[80vw] md:w-[35vw] aspect-[3/4] overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="theatre performer in a vibrant purple dress dancing energetically during the America number of West Side Story with dynamic blur" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA4fp6TQPMUP4alq_KFjhHHlUHRXbP04-VwdnyUMjqjwXl2DjYudsENeXyElGa5elTRTuVByQOJhwy_JP7nwYVm3z0oULFHNj2xrgTugihhS7t3a5jsUP_3sK0ZZR6n4mSL8nqugga497p4Iwn4WdoEPQnIX8jjbesFUgFJgKxZp4GUNPWf5m-KCl-D44EAlUYUmr1I60aqclAyIhQw7lHLYmSXjT16pnaBlKalIJdE6PTsj8P4pZCnnCtyHU5BlbHQOa6VCa26E_Y"/>
+</div>
+<div class="gallery-scroll-item w-[80vw] md:w-[35vw] aspect-[3/4] overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="close-up of theatre actress singing a dramatic ballad with intense emotional expression and stage makeup" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCDVPVE6-XBTIIBcvIkQzZwwKRk5SJaqxav7kv-3EjyxR0HxfOX1-MnfPftP_Bjw95JkXovPlgbiP3y356Pvi0DVI7M2V5nwqEwB6i8QfL6gKvsgjBTEYxhDm8mBTu1yD2EymSefe1-vl4LvZLzjV4i2mfTAURsuMayfIWyzi2aY6VHo71pLBSvv3gUPAuSfpKZVjrWaMM7mcXq7DXShFFKHBrXryYocFzpJqXmk5pFB4T8kNB2zKi7EpkH27MGUcK87JphTtgnM2s"/>
+</div>
+<div class="gallery-scroll-item w-[80vw] md:w-[50vw] aspect-video relative group overflow-hidden bg-surface-container-low">
+<img class="w-full h-full object-cover brightness-50" data-alt="West Side Story Video placeholder" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCLa4YssGzujXcqmxH8rVfxd0pGYQoMEm5XRUuOc_YXq6VymFvduZMpXlvXZ4ILpNn8sN4Jc7um1eWqQZ6wl-DV95F-Y-w1wee_vri1WxNBvgd1k0E02akZpwzXeLM6MN9IYTWdTWPD3LqHl4fkhJ9CahgR0FsW7a1L2ZypgCM4lPA4OQEgoxz5dEPKgblNnv6yQmMuGmRRlItw0XCqnlIGSzvCPcoV7fp_lQw_NEFUQNoSiMMYNMfdOxCHLH7xdvKwoZrUwsviAW0"/>
+<a class="absolute inset-0 flex items-center justify-center" href="#">
+<div class="bg-primary/90 w-16 h-16 rounded-full flex items-center justify-center text-on-primary hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-4xl fill-1">play_circle</span>
+</div>
+</a>
+<div class="absolute bottom-6 left-6 font-label text-[10px] uppercase tracking-widest text-white/70">Dance Sequence: America</div>
+</div>
+</div>
+</section>
+<!-- Section: Rent -->
+<section class="mb-32" id="rent">
+<div class="px-8 md:px-16 lg:px-24 mb-12">
+<span class="font-label text-[10px] uppercase tracking-[0.4em] text-on-surface-variant">Production Highlights</span>
+<h2 class="font-headline text-4xl md:text-5xl text-on-surface mt-2">Rent</h2>
+</div>
+<div class="gallery-scroll-container gap-6 px-8 md:px-16 lg:px-24">
+<div class="gallery-scroll-item w-[80vw] md:w-[45vw] aspect-square overflow-hidden relative group">
+<img class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700" data-alt="actress playing Mimi in Rent on a gritty loft set leaning against a metal fire escape in dramatic cinematic lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAHYkPFe2gHlXNWrHEqAu1JrtjuU43Y8bmvBzmmlRF7DJn9i889BAiTihbvfCslkSxUPV4h8UNzTE7SvKWh82UqknoAzuWZrBK7EsMR9n6T5g5iVnQvIcXAY3cQ79iAU7hTUbIp4Gbk67vQMCf7s_SDw60v40tttxSiVOfFp6IEYKkl40alRQd0zlyiAkXNigI71qokzJjKl8hIARnUPBc2Imbonmh0dqPbBc0eI2J_dNQz4JmnR1CdhH3PiKOex1fkHPIp8LQbpp4"/>
+</div>
+<div class="gallery-scroll-item w-[80vw] md:w-[45vw] aspect-square overflow-hidden relative group">
+<img class="w-full h-full object-cover brightness-50" data-alt="Rent stage lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD7VUyjoXOv8Ubjl6MWJJx4WK87laSI0PGUw3cW3bHO9cIGrG6EJ4By-kfJ6nTuoEy6392p4-MxZJahgiXGjHT_q5DMrDGyyLeQdgUSkxI3_2eU5IBCEVCpd5m8VmRMzZ4u1Ooa5vrMwy5GLJam2G_SBa0NM0ltUEhvqFocVQrR26vjDQlFPZZXfOQH9BkofDEsCLCQMfu1IpRjphRjj-t4nWAmcO8NeX5IQP3JY73L49kf7cZ9OYuBGPNi6iAvaxa-h0trpYMYzHE"/>
+<a class="absolute inset-0 flex items-center justify-center" href="#">
+<div class="bg-secondary/90 w-16 h-16 rounded-full flex items-center justify-center text-on-secondary hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-4xl fill-1">videocam</span>
+</div>
+</a>
+<div class="absolute bottom-6 left-6 font-label text-[10px] uppercase tracking-widest text-white/70">Performance Highlights: Live Audio</div>
+</div>
+<div class="gallery-scroll-item w-[80vw] md:w-[30vw] aspect-[3/4] overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="actress during curtain call of Rent smiling widely under warm stage lights with cast members in the background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAffMcctQys1w2t28hNdrQcPoxkPJlR0vSWgmZXsbmaOpkLc2vXDN_9UwpGWdxw99OxHlFS1lnwjW96CofzyKnCWxcpacUFOW0zJ15NW8IYzE8eztDQGoGr1WX5SEJMWYecBb_yQ4cWVa9i-Cjwj-tZDiC60YeR2y3fx6UGk8Z-pzXlky5ObBvTa7SGuIpqCHxynvvUyX4-WhHLFiVBBq96agit5M9HC_a35g1UNCd2LcC7Z1aMhbh1YzYnvYSRWXO8oE62HrqP00o"/>
+</div>
+</div>
+</section>
+<!-- Gallery Footer Call to Action -->
+<section class="px-8 md:px-16 lg:px-24">
+<div class="bg-primary-container p-12 md:p-24 text-center">
+<h3 class="font-headline text-4xl md:text-6xl text-primary mb-8 italic">Ready to cast your next lead?</h3>
+<div class="flex flex-col md:flex-row justify-center items-center gap-6">
+<a class="bg-secondary text-on-secondary px-10 py-4 font-label text-xs uppercase tracking-[0.2em] hover:scale-105 transition-transform duration-300" href="#">Request Full Portfolio</a>
+<a class="text-primary border border-primary/30 px-10 py-4 font-label text-xs uppercase tracking-[0.2em] hover:bg-primary/10 transition-colors" href="#">Download Résumé</a>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-neutral-950 border-t border-neutral-800/30">
+<div class="flex flex-col md:flex-row justify-between items-center px-12 py-16 w-full max-w-screen-2xl mx-auto">
+<div class="mb-8 md:mb-0">
+<p class="font-sans text-xs tracking-widest uppercase text-neutral-400">© 2026 Ashley Calza. All Rights Reserved.</p>
+</div>
+</div>
+</footer>
+</body></html>

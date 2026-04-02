@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Casting | Ashley Calza</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&amp;family=Manrope:wght@200..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "on-tertiary-fixed-variant": "#454747",
+            "surface-tint": "#b9c7e4",
+            "on-error-container": "#ffdad6",
+            "on-tertiary-fixed": "#1a1c1c",
+            "secondary-fixed-dim": "#e9c176",
+            "on-primary": "#233148",
+            "surface-variant": "#353534",
+            "on-secondary-fixed": "#261900",
+            "primary-fixed-dim": "#b9c7e4",
+            "surface-container-lowest": "#0e0e0e",
+            "tertiary-fixed-dim": "#c6c6c6",
+            "on-surface-variant": "#c5c6cd",
+            "outline-variant": "#44474d",
+            "tertiary-container": "#171919",
+            "on-primary-fixed-variant": "#39475f",
+            "secondary-fixed": "#ffdea5",
+            "inverse-surface": "#e5e2e1",
+            "secondary-container": "#604403",
+            "surface": "#131313",
+            "inverse-primary": "#515f78",
+            "on-tertiary-container": "#818282",
+            "surface-container-high": "#2a2a2a",
+            "on-secondary": "#412d00",
+            "background": "#131313",
+            "on-surface": "#e5e2e1",
+            "surface-container-highest": "#353534",
+            "on-background": "#e5e2e1",
+            "surface-dim": "#131313",
+            "surface-bright": "#393939",
+            "on-tertiary": "#2f3131",
+            "error-container": "#93000a",
+            "primary-container": "#0a192f",
+            "on-primary-fixed": "#0d1c32",
+            "primary": "#b9c7e4",
+            "secondary": "#e9c176",
+            "on-secondary-container": "#dab36a",
+            "outline": "#8f9097",
+            "inverse-on-surface": "#313030",
+            "on-secondary-fixed-variant": "#5d4201",
+            "tertiary": "#c6c6c6",
+            "error": "#ffb4ab",
+            "on-primary-container": "#74829d",
+            "tertiary-fixed": "#e2e2e2",
+            "primary-fixed": "#d6e3ff",
+            "surface-container": "#201f1f",
+            "surface-container-low": "#1c1b1b",
+            "on-error": "#690005"
+          },
+          fontFamily: {
+            "headline": ["Newsreader"],
+            "body": ["Manrope"],
+            "label": ["Manrope"]
+          },
+          borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+    }
+    .headlines-newsreader { font-family: 'Newsreader', serif; }
+    .body-manrope { font-family: 'Manrope', sans-serif; }
+  </style>
+</head>
+<body class="bg-background text-on-surface selection:bg-secondary selection:text-on-secondary">
+<!-- TopNavBar (Shared Component) -->
+<nav class="fixed top-0 w-full z-50 bg-neutral-900/70 backdrop-blur-xl transition-all duration-400 ease-in-out">
+<div class="flex justify-between items-center px-8 py-6 w-full max-w-screen-2xl mx-auto">
+<div class="text-2xl font-serif italic text-blue-200 dark:text-blue-100">
+        Ashley Calza
+      </div>
+<div class="hidden md:flex items-center gap-10 font-serif text-lg tracking-tight headlines-newsreader">
+<a class="text-neutral-300 hover:text-blue-100 transition-colors hover:scale-105 duration-400 ease-in-out" href="index.html">Home</a>
+<a class="text-neutral-300 hover:text-blue-100 transition-colors hover:scale-105 duration-400 ease-in-out" href="about.html">About</a>
+<a class="text-amber-200 font-bold border-b border-amber-200/50 pb-1 hover:scale-105 duration-400 ease-in-out" href="casting.html">Casting</a>
+<a class="text-neutral-300 hover:text-blue-100 transition-colors hover:scale-105 duration-400 ease-in-out" href="gallery.html">Gallery</a>
+<a class="text-neutral-300 hover:text-blue-100 transition-colors hover:scale-105 duration-400 ease-in-out" href="contact.html">Contact</a>
+</div>
+<div class="w-[100px] hidden md:block"></div>
+</div>
+</nav>
+<main class="pt-32 pb-24">
+<!-- Hero / Headline Section -->
+<header class="px-8 max-w-screen-2xl mx-auto mb-20">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-8">
+<div class="max-w-3xl">
+<p class="font-label text-xs tracking-widest uppercase text-secondary mb-4">Professional Casting Portfolio</p>
+<h1 class="font-headline text-6xl md:text-8xl leading-tight tracking-tighter">Casting Materials</h1>
+</div>
+<div class="flex flex-wrap gap-4">
+<a class="flex items-center gap-3 bg-surface-container-high text-primary px-8 py-4 hover:scale-[1.02] transition-all duration-300 group border border-outline-variant/20" href="assets/headshot.JPG">
+<span class="material-symbols-outlined text-xl">download</span>
+<span class="font-label text-sm uppercase tracking-widest">Download Headshot</span>
+</a>
+<a class="flex items-center gap-3 bg-secondary text-on-secondary px-8 py-4 hover:scale-[1.02] transition-all duration-300 group shadow-lg" href="assets/headshot.JPG">
+<span class="material-symbols-outlined text-xl">description</span>
+<span class="font-label text-sm uppercase tracking-widest">Download Resume PDF</span>
+</a>
+</div>
+</div>
+</header>
+<!-- Vital Stats / Bento Grid Section -->
+<section class="px-8 max-w-screen-2xl mx-auto mb-32">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+<!-- Primary Photo Overlay -->
+<div class="md:col-span-7 aspect-[4/5] relative overflow-hidden bg-surface-container-low group">
+<img alt="Ashley Calza Headshot" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="assets/headshot.JPG"/>
+<div class="absolute bottom-0 left-0 p-10 bg-gradient-to-t from-background/80 to-transparent w-full">
+<h2 class="font-headline text-4xl mb-2">Ashley Calza</h2>
+<p class="font-body text-on-surface-variant italic">Non-Union</p>
+</div>
+</div>
+<!-- Quick Stats Bento -->
+<div class="md:col-span-5 grid grid-cols-1 gap-6">
+<div class="bg-surface-container-low p-10 flex flex-col justify-between">
+<div>
+<h3 class="font-label text-xs uppercase tracking-widest text-on-surface-variant mb-8">Vitals &amp; Statistics</h3>
+<div class="space-y-6">
+<div class="flex justify-between border-b border-outline-variant/10 pb-4">
+<span class="font-label text-on-surface-variant">Height</span>
+<span class="font-body">5'8"</span>
+</div>
+<div class="flex justify-between border-b border-outline-variant/10 pb-4">
+<span class="font-label text-on-surface-variant">Vocal Range</span>
+<span class="font-body">Soprano / Mezzo</span>
+</div>
+<div class="flex justify-between border-b border-outline-variant/10 pb-4">
+<span class="font-label text-on-surface-variant">Eyes / Hair</span>
+<span class="font-body">Green / Brown</span>
+</div>
+<div class="flex justify-between border-b border-outline-variant/10 pb-4">
+<span class="font-label text-on-surface-variant">Location</span>
+<span class="font-body">New York / California</span>
+</div>
+</div>
+</div>
+<div class="mt-12 flex flex-wrap gap-2">
+<span class="bg-surface-variant text-on-surface-variant px-4 py-1.5 rounded-full font-label text-[10px] uppercase tracking-tighter">Musical Theatre</span>
+<span class="bg-surface-variant text-on-surface-variant px-4 py-1.5 rounded-full font-label text-[10px] uppercase tracking-tighter">Stage Management</span>
+<span class="bg-surface-variant text-on-surface-variant px-4 py-1.5 rounded-full font-label text-[10px] uppercase tracking-tighter">Stage Combat</span>
+<span class="bg-surface-variant text-on-surface-variant px-4 py-1.5 rounded-full font-label text-[10px] uppercase tracking-tighter">Valid Passport</span>
+</div>
+</div>
+<div class="bg-primary-container p-10 relative overflow-hidden group">
+<div class="relative z-10">
+<h3 class="font-label text-xs uppercase tracking-widest text-on-primary-container mb-4">Contact Information</h3>
+<p class="font-headline text-3xl text-primary mb-2">Direct Inquiries</p>
+<p class="font-body text-on-primary-container">ashley.calza@outlook.com</p>
+<p class="font-body text-on-primary-container text-sm mt-4">(310) 944-8161</p>
+</div>
+<span class="material-symbols-outlined absolute -bottom-4 -right-4 text-9xl text-on-primary-fixed-variant opacity-10">star</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Demo Reels Section -->
+<section class="bg-surface-container-low py-32">
+<div class="px-8 max-w-screen-2xl mx-auto">
+<div class="flex items-center gap-6 mb-16">
+<h2 class="font-headline text-5xl">Performance Reels</h2>
+<div class="h-[1px] flex-grow bg-outline-variant/20"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+<!-- Dramatic Reel -->
+<div class="group">
+<div class="aspect-video bg-surface-container relative mb-6 overflow-hidden">
+<img alt="Dramatic Reel Thumbnail" class="w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-500" data-alt="cinematic film still of a woman in a dark urban setting, blue mood lighting, high contrast cinematic grain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuApSS40YD8I0ZBXUZcODzqjy_NSXb_nbVSii_nNBVEsalh7nqgAmti04SJU7RgbtoRg1YFZ4UAtEZn_mIzc6Ytr3IKLdbfrnEwj51Whs9dqAmCh1eZLDRWadwWUKqzFXZcU8dVGS9tvwmn0cdfQ_sAlxJYIqQo5UfTlptrQNgubVrX2qLZTXx3j1axLtMF6cUNcD0kHn16WgrYxatDKa144eBft8ixwxlm8g4HgzUqZMEnhP9A1E0Z7S8couv5mMNG0-z7TkLwvJ7s"/>
+<div class="absolute inset-0 flex items-center justify-center">
+<div class="w-16 h-16 rounded-full bg-secondary text-on-secondary flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+<span class="material-symbols-outlined text-3xl" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+</div>
+</div>
+</div>
+<h3 class="font-headline text-2xl mb-1">Dramatic Acting</h3>
+<p class="font-label text-xs uppercase tracking-widest text-on-surface-variant">2024 Showcase • 2:15</p>
+</div>
+<!-- Vocal Reel -->
+<div class="group">
+<div class="aspect-video bg-surface-container relative mb-6 overflow-hidden">
+<img alt="Vocal Reel Thumbnail" class="w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-500" data-alt="black and white moody close up of a vintage microphone in a dimly lit jazz club with soft bokeh lights" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAK5WWwNu-Ixmdpk1yY1OeO1-q8hvS8DEMcLiWEcrjYznIf9juvKxQVU3haeJ4wUNclceros4NtKxTLBMT3X6xzQm6pq-q-TRzKrwGksBaaEWp2-UqmcDpATdMsNDWKuQEOLzHWHFQpsvFguLSQzW790K63dehNFf-uMLs1DBNWtW9QN07JJPw8Ktthh2BXLYlixAWrw0s1Hf--eJxR4_PT1hwJEn2YcBkW-2kSmwpWytka1TpuwZ1Tf9yME-A-fKnpCk2NSzKtixU"/>
+<div class="absolute inset-0 flex items-center justify-center">
+<div class="w-16 h-16 rounded-full bg-secondary text-on-secondary flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+<span class="material-symbols-outlined text-3xl" style="font-variation-settings: 'FILL' 1;">mic</span>
+</div>
+</div>
+</div>
+<h3 class="font-headline text-2xl mb-1">Vocal Performance</h3>
+<p class="font-label text-xs uppercase tracking-widest text-on-surface-variant">Soprano Selections • 3:40</p>
+</div>
+<!-- Dance Reel -->
+<div class="group">
+<div class="aspect-video bg-surface-container relative mb-6 overflow-hidden">
+<img alt="Dance Reel Thumbnail" class="w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-500" data-alt="blurred motion photography of a dancer in a spotlight, dramatic shadows on a wooden stage floor" src="https://lh3.googleusercontent.com/aida-public/AB6AXuChTd_B2xdEeu_HaPj9ksADorwN2lDlKrHIKgtBdz4ybT5AwyVmelqx763u4OjldMaNm0daRGN8LEvTUTMG4PDDpLGGJQ9Izt_rinUFhdTxK2lzA2AwtACmkrtskag3UDTYzouCwQEIqq6MyApiC7k0PG-AMRbXiIlZ2BbEVtzigr6mrOx87kAll-Vmt9mbuPvsohJcmXelMlmi14r1H_5v-XmUFFlQtSaEXo2yyzA26mwntTGmQb5SoE03AAxV-wPYt6QCeFMaL4k"/>
+<div class="absolute inset-0 flex items-center justify-center">
+<div class="w-16 h-16 rounded-full bg-secondary text-on-secondary flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+<span class="material-symbols-outlined text-3xl" style="font-variation-settings: 'FILL' 1;">directions_run</span>
+</div>
+</div>
+</div>
+<h3 class="font-headline text-2xl mb-1">Movement &amp; Dance</h3>
+<p class="font-label text-xs uppercase tracking-widest text-on-surface-variant">Contemporary/Jazz • 1:50</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Experience Highlights -->
+<section class="px-8 max-w-screen-2xl mx-auto py-32">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-16">
+<div class="lg:col-span-4">
+<h2 class="font-headline text-5xl mb-6">Experience Highlights</h2>
+<p class="font-body text-on-surface-variant text-lg leading-relaxed mb-10">
+            A selection of recent stage and screen work. For a full comprehensive list, please download the professional resume above.
+          </p>
+<div class="space-y-4">
+<div class="flex items-center gap-4 text-primary">
+<span class="material-symbols-outlined">theater_comedy</span>
+<span class="font-label text-sm uppercase tracking-widest">Stage Experience</span>
+</div>
+<div class="flex items-center gap-4 text-primary">
+<span class="material-symbols-outlined">movie</span>
+<span class="font-label text-sm uppercase tracking-widest">Film &amp; Television</span>
+</div>
+<div class="flex items-center gap-4 text-primary">
+<span class="material-symbols-outlined">school</span>
+<span class="font-label text-sm uppercase tracking-widest">Classical Training</span>
+</div>
+</div>
+</div>
+<div class="lg:col-span-8 space-y-12">
+<!-- Item 1 -->
+<div class="group">
+<div class="flex flex-col md:flex-row justify-between md:items-baseline gap-2 mb-2">
+<h3 class="font-headline text-3xl text-on-surface group-hover:text-secondary transition-colors">The Seagull</h3>
+<span class="font-label text-sm text-on-surface-variant">2023</span>
+</div>
+<div class="flex justify-between items-baseline">
+<p class="font-body text-xl">Nina Zarechnaya</p>
+<p class="font-label text-xs uppercase tracking-widest text-outline">Classic Stage Company</p>
+</div>
+</div>
+<!-- Item 2 -->
+<div class="group">
+<div class="flex flex-col md:flex-row justify-between md:items-baseline gap-2 mb-2">
+<h3 class="font-headline text-3xl text-on-surface group-hover:text-secondary transition-colors">Hadestown</h3>
+<span class="font-label text-sm text-on-surface-variant">2022</span>
+</div>
+<div class="flex justify-between items-baseline">
+<p class="font-body text-xl">Eurydice (u/s)</p>
+<p class="font-label text-xs uppercase tracking-widest text-outline">Walter Kerr Theatre (Broadway)</p>
+</div>
+</div>
+<!-- Item 3 -->
+<div class="group">
+<div class="flex flex-col md:flex-row justify-between md:items-baseline gap-2 mb-2">
+<h3 class="font-headline text-3xl text-on-surface group-hover:text-secondary transition-colors">Succession</h3>
+<span class="font-label text-sm text-on-surface-variant">2021</span>
+</div>
+<div class="flex justify-between items-baseline">
+<p class="font-body text-xl">Guest Star (Ep. 402)</p>
+<p class="font-label text-xs uppercase tracking-widest text-outline">HBO Max</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Additional Gallery Grid -->
+<section class="px-8 max-w-screen-2xl mx-auto mb-32">
+<h2 class="font-label text-xs uppercase tracking-widest text-secondary mb-12">Production Stills</h2>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+<div class="aspect-square bg-surface-container overflow-hidden group">
+<img alt="Stage Production 1" class="w-full h-full object-cover group-hover:scale-110 transition-duration-700" data-alt="dramatic wide shot of a stage play performance with heavy fog and blue spotlight on a central figure" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA3B2h2qY25DZwUfNeJpZRoy-x0cgiUUYvIzA1ahBAE0KQgJMUst5tFHR4Y5kVWgPJ5Ve8qNRwRQkAYv4GMhZYTrGTf5UtQvXCbqcQPnemF_IjwzRJC__QqIv9u5KwnCKU9uhuV3uM9GmYClWw8xIRYtimtVJEPgtJi24Pz9veLyhxtoVhZUKbADk-LN74x_VW02rsiaSMq5VPGRy_tBQ50GRaxgGG3qb_asRoWYNJF-YdJMGNspuyLoaYf5m-ajm84LVnkUAp5C5c"/>
+</div>
+<div class="aspect-square bg-surface-container overflow-hidden group">
+<img alt="Stage Production 2" class="w-full h-full object-cover group-hover:scale-110 transition-duration-700" data-alt="profile shot of an actor in classical period costume, velvet textures, warm candle lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAG-yYYyh1uyQnYX1WdW2VdhNc65gfM-AvNH-rbzRamZiCSh1phQsFZbFKHyLGJwTH0_suo7qP_M6zvYsBY2ruc0DEpP4m6zI4WgxmY_-5yaE5oMwQcZbhQLi4a9T6qGMw7TqjEo8L9bj9-rUBUH1pb2FEoXFxOKGHkRGtfXzsxycX8FYcKlfOnSBAgTN3nsZqbMIG7lhaZHTa3pIgHYPW1rj_ZG9hMslQYMg1dOsXFs35xtSyKL9ReG92av1bovTyawtjRUlgTb4Y"/>
+</div>
+<div class="aspect-square bg-surface-container overflow-hidden group">
+<img alt="Stage Production 3" class="w-full h-full object-cover group-hover:scale-110 transition-duration-700" data-alt="actor's hands holding a vintage script under a single warm light in a rehearsal room" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD5qEPn0HMpTlLu5xW1st_Hp1xfUjY86EQfIe-U9nwfpO4RZRebqRWsgYasRRSc3KbtgfBlKmlBPFrStLyTwENKf5J0o3E9UsdigDg3_QN1ko3PVM1EXtU55MVdUNZZcj2KRTm-4gIc_Y2bSOMZnXuFkUcOcILiTNWFWLFwzaHyP8PR4bmuD8NDwzn7QKqCFlaoliRGXJE0RlDa0o06iazy8-E6fwI4NHrOS9TrSQOIXb2MR5YpVU7BJ5KhoSnKH9y8Q0U6ld2fe24"/>
+</div>
+<div class="aspect-square bg-surface-container overflow-hidden group">
+<img alt="Stage Production 4" class="w-full h-full object-cover group-hover:scale-110 transition-duration-700" data-alt="view from the back of an auditorium looking at a bright empty stage with dust motes in the light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBAafmW2quUzcej8UWC75S9grAcjjR5z1PMol-wZBgGJAttSDZ0P-o_dhnXZKm2mPv6_Fdd9faLhgLRwOkdgbfHHY4HvzuzGUctj9sOpYtR38g5YxAdCOGz0lEjB4hPgUleaxeiRrXRmvZaaP4U1YlPPYzCoIFEmmt4Rvg0Er8c1BS-1A0feUOrgpHAbjLjHwqJyhN4n6rLgvscMG6zNmHo_Oy-bM6nTMvPeVoIl3OcKHdbhzcuuAC80tAhLX_yz40Xd7B9jg7qKng"/>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer (Shared Component) -->
+<footer class="bg-neutral-950 border-t border-neutral-800/30">
+<div class="flex flex-col md:flex-row justify-between items-center px-12 py-16 w-full max-w-screen-2xl mx-auto">
+<div class="mb-8 md:mb-0">
+<p class="font-sans text-xs tracking-widest uppercase text-neutral-400">© 2026 Ashley Calza. All Rights Reserved.</p>
+</div>
+</div>
+</footer>
+</body></html>
