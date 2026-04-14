@@ -12,58 +12,60 @@
       theme: {
         extend: {
           colors: {
-            "on-tertiary-fixed-variant": "#454747",
-            "surface-tint": "#b9c7e4",
-            "on-error-container": "#ffdad6",
-            "on-tertiary-fixed": "#1a1c1c",
             "secondary-fixed-dim": "#e9c176",
-            "on-primary": "#233148",
-            "surface-variant": "#353534",
-            "on-secondary-fixed": "#261900",
-            "primary-fixed-dim": "#b9c7e4",
-            "surface-container-lowest": "#0e0e0e",
-            "tertiary-fixed-dim": "#c6c6c6",
-            "on-surface-variant": "#c5c6cd",
-            "outline-variant": "#44474d",
-            "tertiary-container": "#171919",
-            "on-primary-fixed-variant": "#39475f",
-            "secondary-fixed": "#ffdea5",
-            "inverse-surface": "#e5e2e1",
-            "secondary-container": "#604403",
-            "surface": "#131313",
-            "inverse-primary": "#515f78",
-            "on-tertiary-container": "#818282",
-            "surface-container-high": "#2a2a2a",
-            "on-secondary": "#412d00",
-            "background": "#131313",
-            "on-surface": "#e5e2e1",
-            "surface-container-highest": "#353534",
-            "on-background": "#e5e2e1",
-            "surface-dim": "#131313",
-            "surface-bright": "#393939",
-            "on-tertiary": "#2f3131",
-            "error-container": "#93000a",
-            "primary-container": "#0a192f",
-            "on-primary-fixed": "#0d1c32",
-            "primary": "#b9c7e4",
-            "secondary": "#e9c176",
-            "on-secondary-container": "#dab36a",
-            "outline": "#8f9097",
-            "inverse-on-surface": "#313030",
-            "on-secondary-fixed-variant": "#5d4201",
-            "tertiary": "#c6c6c6",
-            "error": "#ffb4ab",
-            "on-primary-container": "#74829d",
-            "tertiary-fixed": "#e2e2e2",
             "primary-fixed": "#d6e3ff",
-            "surface-container": "#201f1f",
-            "surface-container-low": "#1c1b1b",
-            "on-error": "#690005"
+            "on-primary-fixed": "#0d1c32",
+            "tertiary-fixed": "#e2e2e2",
+            "surface-dim": "#000000",
+            "surface-container-lowest": "#000000",
+            "tertiary-fixed-dim": "#c6c6c6",
+            "tertiary-container": "#171919",
+            "surface-variant": "#353534",
+            "on-error": "#690005",
+            "on-tertiary-fixed-variant": "#454747",
+            "on-secondary-container": "#dab36a",
+            "on-tertiary": "#2f3131",
+            "background": "#000000",
+            "surface-container-highest": "#353534",
+            "on-secondary-fixed-variant": "#5d4201",
+            "primary": "#b9c7e4",
+            "on-tertiary-container": "#818282",
+            "surface-container-high": "#1a1a1a",
+            "surface-container-low": "#0a0a0a",
+            "secondary-fixed": "#ffdea5",
+            "surface-bright": "#1c1c1c",
+            "outline": "#8f9097",
+            "on-background": "#e5e2e1",
+            "on-secondary": "#412d00",
+            "inverse-on-surface": "#313030",
+            "primary-fixed-dim": "#b9c7e4",
+            "tertiary": "#c6c6c6",
+            "surface-container": "#121212",
+            "surface": "#000000",
+            "on-tertiary-fixed": "#1a1c1c",
+            "on-error-container": "#ffdad6",
+            "on-secondary-fixed": "#261900",
+            "on-primary-container": "#74829d",
+            "error": "#ffb4ab",
+            "error-container": "#93000a",
+            "secondary": "#e9c176",
+            "on-surface-variant": "#c5c6cd",
+            "inverse-surface": "#e5e2e1",
+            "surface-tint": "#b9c7e4",
+            "on-primary": "#233148",
+            "primary-container": "#000000",
+            "outline-variant": "#44474d",
+            "secondary-container": "#604403",
+            "on-surface": "#e5e2e1",
+            "on-primary-fixed-variant": "#39475f",
+            "inverse-primary": "#515f78"
           },
           fontFamily: {
-            "headline": ["Newsreader"],
-            "body": ["Manrope"],
-            "label": ["Manrope"]
+            "headline": ["Newsreader", "serif"],
+            "body": ["Manrope", "sans-serif"],
+            "label": ["Manrope", "sans-serif"],
+            "newsreader": ["Newsreader", "serif"],
+            "manrope": ["Manrope", "sans-serif"]
           },
           borderRadius: {
             "DEFAULT": "0.125rem",
@@ -79,67 +81,89 @@
     .material-symbols-outlined {
       font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
     }
-    .headlines-newsreader { font-family: 'Newsreader', serif; }
-    .body-manrope { font-family: 'Manrope', sans-serif; }
+    body {
+      background-color: #000000;
+    }
+    .input-underlined {
+      border-bottom: 1px solid rgba(143, 144, 151, 0.4);
+      transition: border-color 0.4s ease-in-out;
+    }
+    .input-underlined:focus {
+      border-color: #e9c176;
+      outline: none;
+    }
   </style>
 </head>
 
-<body class="bg-background text-on-surface body-manrope selection:bg-secondary selection:text-on-secondary">
-  <nav class="fixed top-0 w-full z-50 bg-neutral-900/70 backdrop-blur-xl transition-all duration-400">
-    <div class="flex justify-between items-center px-8 py-6 w-full max-w-screen-2xl mx-auto">
-      <div class="text-2xl font-serif italic text-blue-200 dark:text-blue-100">Ashley Calza</div>
-      <div class="hidden md:flex items-center gap-10 font-serif text-lg tracking-tight">
-        <a class="text-neutral-300 hover:text-blue-100 transition-colors hover:scale-105 duration-400 ease-in-out" href="index.html">Home</a>
-        <a class="text-neutral-300 hover:text-blue-100 transition-colors hover:scale-105 duration-400 ease-in-out" href="about.html">About</a>
-        <a class="text-neutral-300 hover:text-blue-100 transition-colors hover:scale-105 duration-400 ease-in-out" href="casting.html">Casting</a>
-        <a class="text-neutral-300 hover:text-blue-100 transition-colors hover:scale-105 duration-400 ease-in-out" href="gallery.html">Gallery</a>
-        <a class="text-amber-200 font-bold border-b border-amber-200/50 pb-1 hover:scale-105 duration-400 ease-in-out" href="contact.html">Contact</a>
+<body class="text-on-background font-body selection:bg-secondary/30 bg-black" style="background-color: #000000;">
+  <!-- TopAppBar -->
+  <nav class="fixed top-0 w-full z-50 backdrop-blur-xl transition-all duration-400 bg-black">
+    <div class="flex justify-between items-center px-8 py-6 w-full max-w-7xl mx-auto">
+      <div class="font-newsreader text-2xl tracking-widest text-white uppercase">ASHLEY CALZA</div>
+
+      <div class="hidden md:flex items-center gap-10">
+        <a class="font-headline tracking-widest uppercase text-white hover:text-[#b9c7e4] transition-colors duration-400 hover:scale-105 transition-transform" href="index.html">HOME</a>
+        <a class="font-headline tracking-widest uppercase text-white hover:text-[#b9c7e4] transition-colors duration-400 hover:scale-105 transition-transform" href="about.html">ABOUT</a>
+        <a class="font-headline tracking-widest uppercase text-white hover:text-[#b9c7e4] transition-colors duration-400 hover:scale-105 transition-transform" href="media.html">MEDIA</a>
+        <a class="font-headline tracking-widest uppercase text-white hover:text-[#b9c7e4] transition-colors duration-400 hover:scale-105 transition-transform" href="gallery.html">GALLERY</a>
+        <a class="font-headline tracking-widest uppercase text-white hover:text-[#b9c7e4] transition-colors duration-400 hover:scale-105 transition-transform" href="casting.html">FOR CASTING</a>
+        <a class="font-headline tracking-widest uppercase text-white border-b border-white pb-1 hover:scale-105 transition-transform duration-400" href="contact.html">CONTACT</a>
       </div>
-      <div class="w-24 md:w-32"></div>
+
+      <!-- Mobile Menu Trigger -->
+      <button class="md:hidden text-primary" type="button">
+        <span class="material-symbols-outlined text-white">menu</span>
+      </button>
     </div>
   </nav>
 
-  <main class="pt-32 pb-20">
-    <section class="max-w-screen-xl mx-auto px-8">
-      <div class="mb-20 text-center">
-        <h1 class="font-headline text-6xl md:text-8xl italic tracking-tighter text-primary leading-none mb-4">Get in Touch</h1>
-        <p class="font-body text-on-surface-variant max-w-2xl mx-auto text-lg md:text-xl font-light">
-          For performance inquiries, casting opportunities, or collaboration, please reach out via the form below.
-        </p>
-      </div>
+  <!-- Main Content Canvas -->
+  <main class="min-h-screen flex items-center justify-center pt-32 pb-32 px-6">
+    <div class="w-full max-w-6xl mx-auto">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
+        <!-- Left: Featured Image -->
+        <div class="flex justify-center lg:justify-start">
+          <div class="relative w-full max-w-md aspect-[2/3] overflow-hidden transition-all duration-700 ease-in-out group">
+            <img
+              alt="Ashley Calza portrait"
+              class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700 ease-in-out"
+              src="assets/Contact Photo 1.png"
+            />
+          </div>
+        </div>
 
-      <div class="max-w-4xl mx-auto">
-        <div class="bg-surface-container-low p-10 md:p-14 relative overflow-hidden">
-          <div class="absolute inset-0 bg-gradient-to-br from-primary-container/20 to-transparent pointer-events-none"></div>
-
+        <!-- Right: Contact Form -->
+        <div>
           <form
             id="contactForm"
-            class="relative z-10 space-y-8"
+            class="space-y-12"
             method="POST"
             target="hidden_iframe"
             novalidate
           >
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div class="space-y-2">
-                <label class="font-label text-xs uppercase tracking-widest text-secondary" for="name">Full Name</label>
+            <h2 class="text-4xl md:text-5xl font-headline italic mb-12 tracking-tight text-white">Get in Touch!</h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-12">
+              <div class="relative group">
+                <label class="block text-[10px] tracking-[0.2rem] uppercase mb-2 text-white" for="name">Name</label>
                 <input
-                  class="w-full bg-transparent border-0 border-b border-outline/40 focus:ring-0 focus:border-secondary transition-colors py-3 text-on-surface font-body"
+                  class="w-full bg-transparent input-underlined py-4 focus:ring-0 placeholder-on-surface-variant/20 font-light text-white"
                   id="name"
                   name="name"
-                  placeholder="Enter your name"
+                  placeholder="YOUR NAME"
                   type="text"
                   maxlength="100"
                   required
                 />
               </div>
 
-              <div class="space-y-2">
-                <label class="font-label text-xs uppercase tracking-widest text-secondary" for="email">Email Address</label>
+              <div class="relative group">
+                <label class="block text-[10px] tracking-[0.2rem] uppercase mb-2 text-white" for="email">Email</label>
                 <input
-                  class="w-full bg-transparent border-0 border-b border-outline/40 focus:ring-0 focus:border-secondary transition-colors py-3 text-on-surface font-body"
+                  class="w-full bg-transparent input-underlined py-4 focus:ring-0 placeholder-on-surface-variant/20 font-light text-white"
                   id="email"
                   name="email"
-                  placeholder="email@example.com"
+                  placeholder="EMAIL@EXAMPLE.COM"
                   type="email"
                   inputmode="email"
                   autocomplete="email"
@@ -150,27 +174,27 @@
               </div>
             </div>
 
-            <div class="space-y-2">
-              <label class="font-label text-xs uppercase tracking-widest text-secondary" for="subject">Subject</label>
+            <div class="relative group">
+              <label class="block text-[10px] tracking-[0.2rem] uppercase mb-2 text-white" for="subject">Subject</label>
               <input
-                class="w-full bg-transparent border-0 border-b border-outline/40 focus:ring-0 focus:border-secondary transition-colors py-3 text-on-surface font-body"
+                class="w-full bg-transparent input-underlined py-4 focus:ring-0 placeholder-on-surface-variant/20 font-light text-white"
                 id="subject"
                 name="subject"
-                placeholder="What are we discussing?"
+                placeholder="ENQUIRY TYPE"
                 type="text"
                 maxlength="150"
                 required
               />
             </div>
 
-            <div class="space-y-2">
-              <label class="font-label text-xs uppercase tracking-widest text-secondary" for="message">Message</label>
+            <div class="relative group">
+              <label class="block text-[10px] tracking-[0.2rem] uppercase mb-2 text-white" for="message">Message</label>
               <textarea
-                class="w-full bg-transparent border-0 border-b border-outline/40 focus:ring-0 focus:border-secondary transition-colors py-3 text-on-surface font-body resize-none"
+                class="w-full bg-transparent input-underlined py-4 focus:ring-0 placeholder-on-surface-variant/20 font-light resize-none text-white"
                 id="message"
                 name="message"
-                placeholder="Share your message..."
-                rows="6"
+                placeholder="TELL ME ABOUT YOUR PROJECT..."
+                rows="4"
                 maxlength="5000"
                 required
               ></textarea>
@@ -182,31 +206,29 @@
               <input id="company" name="company" type="text" tabindex="-1" autocomplete="off" />
             </div>
 
-            <div class="pt-4 flex justify-center">
+            <div class="pt-4 flex justify-start">
               <button
                 id="submitButton"
-                class="group flex items-center gap-4 bg-secondary text-on-secondary px-10 py-4 font-bold tracking-widest uppercase hover:scale-[1.02] transition-all duration-400 disabled:opacity-60 disabled:cursor-not-allowed"
+                class="px-12 py-4 rounded-lg font-bold tracking-widest uppercase text-xs hover:scale-[1.02] active:scale-[0.98] transition-all duration-400 ease-in-out shadow-lg shadow-on-secondary-fixed-variant/10 bg-transparent border border-white text-white hover:bg-white hover:text-black disabled:opacity-60 disabled:cursor-not-allowed"
                 type="submit"
               >
                 <span id="submitButtonText">Send Message</span>
-                <span class="material-symbols-outlined text-xl group-hover:translate-x-1 transition-transform">send</span>
               </button>
             </div>
 
-            <p id="formError" class="hidden text-center text-sm text-error"></p>
+            <p id="formError" class="hidden text-sm text-error"></p>
           </form>
 
           <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
         </div>
       </div>
-    </section>
+    </div>
   </main>
 
-  <footer class="bg-neutral-950 border-t border-neutral-800/30">
-    <div class="flex flex-col md:flex-row justify-between items-center px-12 py-16 w-full max-w-screen-2xl mx-auto">
-      <div class="mb-8 md:mb-0">
-        <p class="font-sans text-xs tracking-widest uppercase text-neutral-400">© 2026 Ashley Calza. All Rights Reserved.</p>
-      </div>
+  <!-- Footer -->
+  <footer class="w-full py-12 border-t border-[#44474d]/20" style="background-color: #000000;">
+    <div class="flex justify-center items-center w-full px-8">
+      <p class="font-sans text-[10px] tracking-[0.1rem] uppercase text-white"><br></p>
     </div>
   </footer>
 

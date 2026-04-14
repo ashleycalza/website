@@ -1,275 +1,195 @@
 <!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>About | Ashley Calza</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,600;0,700;1,400&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
 
-<html class="dark" lang="en"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Ashley Calza | About the Performer</title>
-<!-- Fonts -->
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;400;600;800&amp;family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&amp;display=swap" rel="stylesheet"/>
-<!-- Icons -->
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<!-- Tailwind -->
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<script id="tailwind-config">
-      tailwind.config = {
-        darkMode: "class",
-        theme: {
-          extend: {
-            colors: {
-              "on-tertiary-fixed-variant": "#454747",
-              "surface-tint": "#b9c7e4",
-              "on-error-container": "#ffdad6",
-              "on-tertiary-fixed": "#1a1c1c",
-              "secondary-fixed-dim": "#e9c176",
-              "on-primary": "#233148",
-              "surface-variant": "#353534",
-              "on-secondary-fixed": "#261900",
-              "primary-fixed-dim": "#b9c7e4",
-              "surface-container-lowest": "#0e0e0e",
-              "tertiary-fixed-dim": "#c6c6c6",
-              "on-surface-variant": "#c5c6cd",
-              "outline-variant": "#44474d",
-              "tertiary-container": "#171919",
-              "on-primary-fixed-variant": "#39475f",
-              "secondary-fixed": "#ffdea5",
-              "inverse-surface": "#e5e2e1",
-              "secondary-container": "#604403",
-              "surface": "#131313",
-              "inverse-primary": "#515f78",
-              "on-tertiary-container": "#818282",
-              "surface-container-high": "#2a2a2a",
-              "on-secondary": "#412d00",
-              "background": "#131313",
-              "on-surface": "#e5e2e1",
-              "surface-container-highest": "#353534",
-              "on-background": "#e5e2e1",
-              "surface-dim": "#131313",
-              "surface-bright": "#393939",
-              "on-tertiary": "#2f3131",
-              "error-container": "#93000a",
-              "primary-container": "#0a192f",
-              "on-primary-fixed": "#0d1c32",
-              "primary": "#b9c7e4",
-              "secondary": "#e9c176",
-              "on-secondary-container": "#dab36a",
-              "outline": "#8f9097",
-              "inverse-on-surface": "#313030",
-              "on-secondary-fixed-variant": "#5d4201",
-              "tertiary": "#c6c6c6",
-              "error": "#ffb4ab",
-              "on-primary-container": "#74829d",
-              "tertiary-fixed": "#e2e2e2",
-              "primary-fixed": "#d6e3ff",
-              "surface-container": "#201f1f",
-              "surface-container-low": "#1c1b1b",
-              "on-error": "#690005"
-            },
-            fontFamily: {
-              "headline": ["Newsreader"],
-              "body": ["Manrope"],
-              "label": ["Manrope"]
-            },
-            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary-fixed": "#d6e3ff",
+            "on-error": "#690005",
+            "surface-container": "#201f1f",
+            "tertiary-fixed-dim": "#c6c6c6",
+            "tertiary-fixed": "#e2e2e2",
+            "tertiary": "#c6c6c6",
+            "surface-variant": "#353534",
+            "surface-dim": "#131313",
+            "on-tertiary-fixed": "#1a1c1c",
+            "surface-tint": "#b9c7e4",
+            "surface": "#131313",
+            "on-secondary-fixed": "#261900",
+            "inverse-on-surface": "#313030",
+            "secondary": "#e9c176",
+            "on-primary": "#233148",
+            "on-tertiary": "#2f3131",
+            "on-primary-fixed": "#0d1c32",
+            "background": "#131313",
+            "on-secondary-fixed-variant": "#5d4201",
+            "surface-container-lowest": "#0e0e0e",
+            "primary": "#b9c7e4",
+            "on-surface": "#e5e2e1",
+            "inverse-surface": "#e5e2e1",
+            "on-error-container": "#ffdad6",
+            "inverse-primary": "#515f78",
+            "secondary-fixed-dim": "#e9c176",
+            "on-primary-fixed-variant": "#39475f",
+            "error-container": "#93000a",
+            "error": "#ffb4ab",
+            "on-background": "#e5e2e1",
+            "tertiary-container": "#171919",
+            "on-tertiary-container": "#818282",
+            "secondary-container": "#604403",
+            "on-secondary-container": "#dab36a",
+            "on-secondary": "#412d00",
+            "primary-fixed-dim": "#b9c7e4",
+            "primary-container": "#0a192f",
+            "surface-bright": "#393939",
+            "on-primary-container": "#74829d",
+            "surface-container-highest": "#353534",
+            "secondary-fixed": "#ffdea5",
+            "surface-container-low": "#1c1b1b",
+            "on-surface-variant": "#c5c6cd",
+            "surface-container-high": "#2a2a2a",
+            "outline-variant": "#44474d",
+            "outline": "#8f9097",
+            "on-tertiary-fixed-variant": "#454747"
+          },
+          fontFamily: {
+            "headline": ["Newsreader"],
+            "body": ["Manrope"],
+            "label": ["Manrope"],
+            "newsreader": ["Newsreader", "serif"],
+            "manrope": ["Manrope", "sans-serif"]
+          },
+          borderRadius: {
+            "DEFAULT": "0.125rem",
+            "lg": "0.25rem",
+            "xl": "0.5rem",
+            "full": "0.75rem"
           },
         },
-      }
-    </script>
-<style>
-        .material-symbols-outlined {
-            font-variation-settings: 'FILL' 0, 'wght' 200, 'GRAD' 0, 'opsz' 24;
-        }
-        body {
-            background-color: #131313;
-        }
-    </style>
+      },
+    }
+  </script>
+
+  <style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+
+    body {
+      background-color: #000000;
+      color: #e5e2e1;
+    }
+  </style>
 </head>
-<body class="font-body text-on-surface selection:bg-secondary/30">
-<!-- TopNavBar -->
-<nav class="fixed top-0 w-full z-50 bg-neutral-900/70 backdrop-blur-xl">
-<div class="flex justify-between items-center px-8 py-6 w-full max-w-screen-2xl mx-auto">
-<a class="text-2xl font-serif italic text-blue-200 dark:text-blue-100" href="#">Ashley Calza</a>
-<div class="hidden md:flex items-center space-x-12">
-<a class="text-neutral-300 hover:text-blue-100 transition-colors duration-400 ease-in-out hover:scale-105" href="index.html">Home</a>
-<a class="text-amber-200 font-bold border-b border-amber-200/50 pb-1 duration-400 ease-in-out hover:scale-105" href="about.html">About</a>
-<a class="text-neutral-300 hover:text-blue-100 transition-colors duration-400 ease-in-out hover:scale-105" href="casting.html">Casting</a>
-<a class="text-neutral-300 hover:text-blue-100 transition-colors duration-400 ease-in-out hover:scale-105" href="gallery.html">Gallery</a>
-<a class="text-neutral-300 hover:text-blue-100 transition-colors duration-400 ease-in-out hover:scale-105" href="contact.html">Contact</a>
-</div>
-<div class="w-[100px] md:w-auto"></div> <!-- Spacer since Book Now was removed -->
-</div>
-</nav>
-<!-- Main Content -->
-<main class="pt-32 pb-24 px-6 md:px-12 max-w-screen-xl mx-auto overflow-hidden">
-<!-- Hero Biography Section -->
-<section class="flex flex-col lg:flex-row gap-16 lg:gap-24 mb-32 items-start">
-<div class="w-full lg:w-2/5 sticky top-32">
-<div class="relative group">
-<img alt="Headshot of Ashley Calza" class="w-full aspect-[3/4] object-cover rounded-DEFAULT shadow-2xl transition-transform duration-500 group-hover:scale-[1.01]" src="https://lh3.googleusercontent.com/aida/ADBb0ujWe0_tv-h0tUVB9zSios1H3haIrY_wk9pRkPP8CJRBBz_hObC2WAcu3UkT39dK6t6pkMSQ3LLsuqft5y0UxVeGSLU5p5qHS2R5ujrFdkaGq2y_T43A-35YtPxGhcFVq9rg91mZ7lixmn3vLdn2z_Sin128czRLuPDthcb68cRLQQsOSs71siBgVoncPgYKX2hOEd_PhLgY5ICnMxfNxvwOYTNvFukn4FSJanm3QKbXdEsv3o30nFHKwE7jaa3DV-GacfXXgNbWlQ"/>
-<div class="absolute -bottom-6 -right-6 w-32 h-32 border-r border-b border-secondary/40 pointer-events-none hidden lg:block"></div>
-</div>
-</div>
-<div class="w-full lg:w-3/5 space-y-12">
-<header class="space-y-4">
-<span class="text-secondary font-label tracking-[0.2em] text-xs uppercase">About the Artist</span>
-<h1 class="font-headline text-6xl md:text-8xl leading-none text-on-surface -ml-1">
-                        Ashley <span class="italic font-light">Calza</span>
-</h1>
-</header>
-<div class="prose prose-invert prose-lg max-w-none text-on-surface-variant font-light leading-relaxed space-y-8">
-<p class="font-headline italic text-2xl text-primary leading-snug">
-                        "Oh, hi there. Didn’t see you, but I’m glad you’re here."
-                    </p>
-<p>
-                        My name is Ashley Calza, and I’m an actor based in Los Angeles, California.
-                    </p>
-<p>
-                        There are only so many Just Dance routines one can perfect before my mother lovingly encourages that I expand my audience beyond the living room. Luckily for me, that nudge led exactly where I was meant to be. Acting has been a constant in my life, and somehow, I keep falling in love with it all over again. 
-                    </p>
-<p>
-                        I’m endlessly excited about where this path is taking me and deeply grateful to be doing what I love. When I’m not performing, I’m usually collaging old magazines, working on a puzzle, or somewhere on a hiking trail pretending I didn’t slightly lose.
-                    </p>
-</div>
-<div class="flex flex-wrap gap-3">
-<span class="bg-surface-variant text-on-surface-variant px-4 py-1.5 rounded-full text-xs font-label tracking-widest uppercase">Musical Theatre</span>
-<span class="bg-surface-variant text-on-surface-variant px-4 py-1.5 rounded-full text-xs font-label tracking-widest uppercase">Actor</span>
-<span class="bg-surface-variant text-on-surface-variant px-4 py-1.5 rounded-full text-xs font-label tracking-widest uppercase">Mezzo-Soprano</span>
-</div>
-</div>
-</section>
-<!-- Dynamic Resume Grid -->
-<section class="space-y-16 py-24 bg-surface-container-low -mx-6 md:-mx-12 px-6 md:px-12 rounded-xl">
-<div class="max-w-4xl mx-auto w-full">
-<div class="flex items-end justify-between mb-12">
-<h2 class="font-headline text-4xl text-on-surface">Stage &amp; <span class="italic">Screen</span></h2>
-<a class="font-label text-xs uppercase tracking-widest text-primary border-b border-primary/20 pb-1 hover:text-secondary hover:border-secondary transition-colors" href="assets/resume.pdf">Download PDF Resume</a>
-</div>
-<!-- Theatre Accordion-style List -->
-<div class="space-y-12">
-<div class="group">
-<div class="flex items-center gap-4 mb-6">
-<span class="w-8 h-[1px] bg-secondary/40"></span>
-<h3 class="font-label text-xs uppercase tracking-widest text-secondary">Theatre</h3>
-</div>
-<div class="space-y-8">
-<div class="flex flex-col md:flex-row justify-between items-baseline gap-2">
-<div class="flex flex-col">
-<span class="font-headline text-2xl text-on-surface">Little Women</span>
-<span class="font-label text-sm text-on-surface-variant italic">Jo March</span>
-</div>
-<span class="font-label text-xs uppercase text-outline">The Studio Theatre / Dir. Claire Sauls</span>
-</div>
-<div class="flex flex-col md:flex-row justify-between items-baseline gap-2">
-<div class="flex flex-col">
-<span class="font-headline text-2xl text-on-surface">The Play That Goes Wrong</span>
-<span class="font-label text-sm text-on-surface-variant italic">Chris</span>
-</div>
-<span class="font-label text-xs uppercase text-outline">Forbes Center / Dir. Peter Zazzali</span>
-</div>
-<div class="flex flex-col md:flex-row justify-between items-baseline gap-2">
-<div class="flex flex-col">
-<span class="font-headline text-2xl text-on-surface">The Last Five Years</span>
-<span class="font-label text-sm text-on-surface-variant italic">Cathy</span>
-</div>
-<span class="font-label text-xs uppercase text-outline">The Studio Theatre / Dir. Joaquin Dela Cruz</span>
-</div>
-<div class="flex flex-col md:flex-row justify-between items-baseline gap-2">
-<div class="flex flex-col">
-<span class="font-headline text-2xl text-on-surface">Silent Sky</span>
-<span class="font-label text-sm text-on-surface-variant italic">Annie Cannon</span>
-</div>
-<span class="font-label text-xs uppercase text-outline">Forbes Center / Dir. Peter Zazzali</span>
-</div>
-<div class="flex flex-col md:flex-row justify-between items-baseline gap-2">
-<div class="flex flex-col">
-<span class="font-headline text-2xl text-on-surface">Big Fish</span>
-<span class="font-label text-sm text-on-surface-variant italic">Dr. Bennet (U/S Josephine)</span>
-</div>
-<span class="font-label text-xs uppercase text-outline">Forbes Center / Dir. Kate Arecchi</span>
-</div>
-<div class="flex flex-col md:flex-row justify-between items-baseline gap-2">
-<div class="flex flex-col">
-<span class="font-headline text-2xl text-on-surface">Beauty and the Beast</span>
-<span class="font-label text-sm text-on-surface-variant italic">Belle</span>
-</div>
-<span class="font-label text-xs uppercase text-outline">Mira Costa Drama / Dir. Jonathan Westerberg</span>
-</div>
-<div class="flex flex-col md:flex-row justify-between items-baseline gap-2">
-<div class="flex flex-col">
-<span class="font-headline text-2xl text-on-surface">Mamma Mia</span>
-<span class="font-label text-sm text-on-surface-variant italic">Donna</span>
-</div>
-<span class="font-label text-xs uppercase text-outline">Mira Costa Drama / Dir. Jonathan Westerberg</span>
-</div>
-</div>
-</div>
-<div class="group">
-<div class="flex items-center gap-4 mb-6 pt-8">
-<span class="w-8 h-[1px] bg-secondary/40"></span>
-<h3 class="font-label text-xs uppercase tracking-widest text-secondary">Training &amp; Education</h3>
-</div>
-<div class="grid md:grid-cols-2 gap-12">
-<div class="space-y-4">
-<span class="block font-headline text-xl text-primary">James Madison University (JMU)</span>
-<p class="text-sm text-on-surface-variant leading-relaxed">
-                                    BA Musical Theatre major, Class of 2027.<br/>
-                                    Rigorous training in performance, vocal technique, and movement.
-                                </p>
-</div>
-<div class="space-y-2">
-<ul class="text-sm text-on-surface-variant space-y-2">
-<li><strong class="text-on-surface">Voice:</strong> Nancy McSweeney, Megan Cornelius</li>
-<li><strong class="text-on-surface">Acting:</strong> Leah Anderson, Kate Lumpkin, Kate Arecchi, Peter Zazzali, Wayne Carr</li>
-<li><strong class="text-on-surface">Dance:</strong> Julia Vessey (Ballet), Ryan Corriston (Modern), Suzanne Miller-Corso (Jazz, Tap)</li>
-</ul>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
-<!-- Media Bento Grid -->
-<section class="py-32">
-<div class="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-[400px]">
-<div class="md:col-span-2 relative overflow-hidden rounded-DEFAULT group">
-<img alt="Stage production still" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="assets/IMG_9895.JPG"/>
-<div class="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent"></div>
-<div class="absolute bottom-8 left-8">
-<span class="font-label text-xs uppercase tracking-widest text-secondary mb-2 block">Production Still</span>
-<h4 class="font-headline text-3xl">Little Women, 2026</h4>
-</div>
-</div>
-<div class="relative overflow-hidden rounded-DEFAULT group">
-<img alt="Rehearsal photo" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="assets/IMG_0934.JPG"/>
-<div class="absolute inset-0 bg-primary-container/20 group-hover:bg-transparent transition-colors duration-500"></div>
-</div>
-<div class="relative overflow-hidden rounded-DEFAULT group">
-<img alt="Backstage dressing room" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="assets/IMG_1294.JPG"/>
-</div>
-<div class="md:col-span-2 bg-surface-container-high rounded-DEFAULT p-12 flex flex-col justify-center">
-<h3 class="font-headline text-4xl mb-6">Connect &amp; Collaborate</h3>
-<p class="text-on-surface-variant font-light mb-8 max-w-md">Currently based in Los Angeles and open to theatrical and film inquiries for the upcoming season.</p>
-<div class="flex gap-8">
-<a class="flex items-center gap-2 group text-secondary" href="contact.html">
-<span class="material-symbols-outlined text-lg">mail</span>
-<span class="font-label text-xs uppercase tracking-widest group-hover:underline">Inquiry</span>
-</a>
-<a class="flex items-center gap-2 group text-primary" href="contact.html">
-<span class="material-symbols-outlined text-lg">work</span>
-<span class="font-label text-xs uppercase tracking-widest group-hover:underline">Representation</span>
-</a>
-</div>
-</div>
-</div>
-</section>
-</main>
-<!-- Footer -->
-<footer class="bg-neutral-950 border-t border-neutral-800/30">
-<div class="flex flex-col md:flex-row justify-between items-center px-12 py-16 w-full max-w-screen-2xl mx-auto">
-<div class="mb-8 md:mb-0">
-<p class="font-sans text-xs tracking-widest uppercase text-neutral-400">© 2026 Ashley Calza. All Rights Reserved.</p>
-</div>
-</div>
-</footer>
-</body></html>
+
+<body class="font-body selection:bg-secondary selection:text-on-secondary">
+  <!-- TopNavBar -->
+  <nav class="fixed top-0 w-full z-50 bg-[#000000]/70 backdrop-blur-md">
+    <div class="flex justify-between items-center px-6 md:px-12 py-6 w-full max-w-screen-2xl mx-auto">
+      <div class="font-newsreader text-2xl tracking-tight text-white font-headline uppercase tracking-widest">
+        ASHLEY CALZA
+      </div>
+
+      <div class="hidden md:flex items-center gap-10">
+        <a class="font-headline tracking-widest uppercase text-white hover:text-[#b9c7e4] transition-colors duration-400 hover:scale-105 transition-transform" href="index.html">HOME</a>
+        <a class="font-headline tracking-widest uppercase text-white border-b border-white pb-1 hover:scale-105 transition-transform duration-400" href="about.html">ABOUT</a>
+        <a class="font-headline tracking-widest uppercase text-white hover:text-[#b9c7e4] transition-colors duration-400 hover:scale-105 transition-transform" href="media.html">MEDIA</a>
+        <a class="font-headline tracking-widest uppercase text-white hover:text-[#b9c7e4] transition-colors duration-400 hover:scale-105 transition-transform" href="gallery.html">GALLERY</a>
+        <a class="font-headline tracking-widest uppercase text-white hover:text-[#b9c7e4] transition-colors duration-400 hover:scale-105 transition-transform" href="casting.html">FOR CASTING</a>
+        <a class="font-headline tracking-widest uppercase text-white hover:text-[#b9c7e4] transition-colors duration-400 hover:scale-105 transition-transform" href="contact.html">CONTACT</a>
+      </div>
+
+      <!-- Mobile Menu Toggle -->
+      <button class="md:hidden text-on-surface">
+        <span class="material-symbols-outlined">menu</span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Main Content: Side-by-Side Split Layout -->
+  <main class="pt-24 md:pt-0 min-h-screen flex flex-col md:flex-row bg-[#000000]">
+    <!-- Left: Headshot Photo -->
+    <section class="w-full md:w-1/2 h-[614px] md:h-screen sticky top-0 overflow-hidden p-8 md:p-16 lg:p-24" style="background-color: #000000;">
+      <img
+        alt="Ashley Calza portrait"
+        class="w-full h-full object-cover object-contain rounded-lg"
+        src="assets/About Me Photo 1.png"
+      >
+      <!-- Overlay Vignette -->
+    </section>
+
+    <!-- Right: Bio Content -->
+    <section class="w-full md:w-1/2 px-8 md:px-20 py-16 md:py-32 flex flex-col justify-center" style="background-color: #000000;">
+      <div class="max-w-2xl">
+        <h1 class="font-manrope font-light text-on-surface uppercase text-glow mb-6 text-4xl md:text-5xl whitespace-nowrap tracking-[0.3rem] md:tracking-[0.5rem]" style="color: rgb(255, 255, 255);">
+          Oh, hi there!
+        </h1>
+
+        <div class="space-y-8 leading-relaxed text-lg font-body">
+          <p class="text-on-surface" style="color: rgb(255, 255, 255);">
+            Didn’t see you, but I’m glad you’re here.
+          </p>
+
+          <p style="color: rgb(255, 255, 255);">
+            My name is Ashley Calza, and I’m an actor based in Los Angeles, California.
+          </p>
+
+          <p style="color: rgb(255, 255, 255);">
+            There are only so many Just Dance routines one can perfect before my mother lovingly encourages that I expand my audience beyond the living room. Luckily for me, that nudge led exactly where I was meant to be. Acting has been a constant in my life, and somehow, I keep falling in love with it all over again.
+          </p>
+
+          <p style="color: rgb(255, 255, 255);">
+            I’m endlessly excited about where this path is taking me and deeply grateful to be doing what I love.
+          </p>
+
+          <p style="color: rgb(255, 255, 255);">
+            When I’m not performing, I’m usually collaging old magazines, working on a puzzle, or somewhere on a hiking trail pretending I didn’t slightly lose.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="w-full py-12 bg-[#000000] flex flex-col items-center justify-center px-8" style="background-color: #000000; border-top: none;">
+    <div class="flex flex-col items-center gap-6">
+      <p class="font-manrope text-[10px] uppercase tracking-[0.1rem] text-[#c5c6cd]" style="color: rgb(255, 255, 255);"><br></p>
+    </div>
+  </footer>
+
+  <!-- Bottom Nav for Mobile -->
+  <nav class="md:hidden fixed bottom-0 left-0 right-0 bg-[#000000]/90 backdrop-blur-xl border-t border-outline-variant/10 px-6 py-4 z-50">
+    <div class="flex justify-between items-center text-[#c5c6cd]">
+      <a class="flex flex-col items-center gap-1" href="index.html" style="color: rgb(255, 255, 255);">
+        <span class="material-symbols-outlined">home</span>
+        <span class="text-[10px] font-label uppercase">Home</span>
+      </a>
+
+      <a class="flex flex-col items-center gap-1" href="about.html" style="color: rgb(255, 255, 255);">
+        <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">person</span>
+        <span class="text-[10px] font-label uppercase">About</span>
+      </a>
+
+      <a class="flex flex-col items-center gap-1" href="casting.html" style="color: rgb(255, 255, 255);">
+        <span class="material-symbols-outlined">theater_comedy</span>
+        <span class="text-[10px] font-label uppercase">Casting</span>
+      </a>
+
+      <a class="flex flex-col items-center gap-1" href="contact.html" style="color: rgb(255, 255, 255);">
+        <span class="material-symbols-outlined">mail</span>
+        <span class="text-[10px] font-label uppercase">Contact</span>
+      </a>
+    </div>
+  </nav>
+</body>
+</html>

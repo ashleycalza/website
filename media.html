@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&family=Manrope:wght@200..800&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "inverse-on-surface": "#313030",
+            "on-secondary-fixed-variant": "#5d4201",
+            "on-error-container": "#ffdad6",
+            "secondary-container": "#604403",
+            "on-tertiary-fixed-variant": "#454747",
+            "surface-container-lowest": "#0e0e0e",
+            "on-secondary-container": "#dab36a",
+            "surface-variant": "#353534",
+            "on-primary": "#233148",
+            "secondary": "#e9c176",
+            "on-surface-variant": "#c5c6cd",
+            "on-secondary-fixed": "#261900",
+            "surface-container-low": "#1c1b1b",
+            "on-primary-container": "#74829d",
+            "error": "#ffb4ab",
+            "on-secondary": "#412d00",
+            "on-tertiary-container": "#818282",
+            "outline-variant": "#44474d",
+            "primary-fixed": "#d6e3ff",
+            "inverse-primary": "#515f78",
+            "surface-tint": "#b9c7e4",
+            "surface-container": "#201f1f",
+            "primary-fixed-dim": "#b9c7e4",
+            "on-primary-fixed-variant": "#39475f",
+            "surface-container-highest": "#353534",
+            "secondary-fixed": "#ffdea5",
+            "on-background": "#e5e2e1",
+            "tertiary": "#c6c6c6",
+            "surface-dim": "#131313",
+            "primary-container": "#0a192f",
+            "on-tertiary": "#2f3131",
+            "primary": "#b9c7e4",
+            "tertiary-container": "#171919",
+            "on-surface": "#e5e2e1",
+            "background": "#131313",
+            "surface-bright": "#393939",
+            "on-primary-fixed": "#0d1c32",
+            "error-container": "#93000a",
+            "surface-container-high": "#2a2a2a",
+            "on-error": "#690005",
+            "tertiary-fixed-dim": "#c6c6c6",
+            "secondary-fixed-dim": "#e9c176",
+            "outline": "#8f9097",
+            "on-tertiary-fixed": "#1a1c1c",
+            "surface": "#131313",
+            "inverse-surface": "#e5e2e1",
+            "tertiary-fixed": "#e2e2e2"
+          },
+          borderRadius: {
+            "DEFAULT": "0.125rem",
+            "lg": "0.25rem",
+            "xl": "0.5rem",
+            "full": "0.75rem"
+          },
+          fontFamily: {
+            "headline": ["Newsreader", "serif"],
+            "body": ["Manrope", "sans-serif"],
+            "label": ["Manrope", "sans-serif"],
+            "newsreader": ["Newsreader", "serif"],
+            "manrope": ["Manrope", "sans-serif"]
+          }
+        },
+      },
+    }
+  </script>
+  <style>
+    body { background-color: #000000; }
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+  </style>
+</head>
+
+<body class="text-on-surface font-body selection:bg-secondary selection:text-on-secondary">
+  <!-- TopNavBar -->
+  <nav class="fixed top-0 w-full z-50 bg-[#000000]/70 backdrop-blur-md">
+    <div class="flex justify-between items-center px-6 md:px-12 py-6 w-full max-w-screen-2xl mx-auto">
+      <div class="font-newsreader text-2xl tracking-tight text-white font-headline uppercase tracking-widest">
+        ASHLEY CALZA
+      </div>
+
+      <div class="hidden md:flex items-center gap-10">
+        <a class="font-headline tracking-widest uppercase text-white hover:text-[#b9c7e4] transition-colors duration-400 hover:scale-105 transition-transform" href="index.html">HOME</a>
+        <a class="font-headline tracking-widest uppercase text-white hover:text-[#b9c7e4] transition-colors duration-400 hover:scale-105 transition-transform" href="about.html">ABOUT</a>
+        <a class="font-headline tracking-widest uppercase text-white border-b border-white pb-1 hover:scale-105 transition-transform duration-400" href="media.html">MEDIA</a>
+        <a class="font-headline tracking-widest uppercase text-white hover:text-[#b9c7e4] transition-colors duration-400 hover:scale-105 transition-transform" href="gallery.html">GALLERY</a>
+        <a class="font-headline tracking-widest uppercase text-white hover:text-[#b9c7e4] transition-colors duration-400 hover:scale-105 transition-transform" href="casting.html">FOR CASTING</a>
+        <a class="font-headline tracking-widest uppercase text-white hover:text-[#b9c7e4] transition-colors duration-400 hover:scale-105 transition-transform" href="contact.html">CONTACT</a>
+      </div>
+
+      <!-- Mobile Menu Toggle -->
+      <button class="md:hidden text-on-surface">
+        <span class="material-symbols-outlined">menu</span>
+      </button>
+    </div>
+  </nav>
+
+  <main class="min-h-screen pt-40 pb-24 px-6 md:px-12">
+    <header class="max-w-screen-2xl mx-auto mb-20 text-center">
+      <h1 class="font-headline text-5xl md:text-7xl uppercase tracking-[0.4rem] text-white">Self Tapes</h1>
+    </header>
+
+    <section class="max-w-screen-2xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
+      <div class="group relative overflow-hidden bg-surface-container-low transition-transform duration-500 hover:scale-[1.01]">
+        <div class="aspect-video relative overflow-hidden">
+          <img alt="Dance Reel Performance" class="w-full h-full object-cover filter grayscale hover:grayscale-0 transition-all duration-700" data-alt="Professional musical theatre performer executing a high-energy Broadway dance routine under dramatic stage lighting with theatrical background atmosphere" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAdVE5mHVaweyWDNWjw6K3e0V4sqTSVSf3g85ly9cId3hYJlmkdFOQrmwAi_nzK1xtNrALFwRePfBlSGlBizBh5zN-6QVyhSCzdr_C4ZgtHUEhxGSQ7Gf5396LXlxm4ySkIgUVtj50B-DxAh4Ehr0GwXiJdB_mN8dE0mheFsdTvegvyTN4m4R61CNxvHPB-q1unFB-AmfRPOQYmfVeCewnePFHn8tMIyt7aMG_UEg-SAmMiXjaJH3qESjc3c09kUWT9ZPbqKymCtf0"/>
+          <div class="absolute inset-0 bg-black/40 flex items-center justify-center group-hover:bg-black/20 transition-colors">
+            <div class="w-16 h-16 rounded-full border border-white/30 flex items-center justify-center backdrop-blur-sm group-hover:scale-110 transition-transform duration-500">
+              <span class="material-symbols-outlined text-white text-4xl" style='font-variation-settings: "FILL" 1;'>play_arrow</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="group relative overflow-hidden bg-surface-container-low transition-transform duration-500 hover:scale-[1.01]">
+        <div class="aspect-video relative overflow-hidden">
+          <img alt="Audition Song: Wicked" class="w-full h-full object-cover filter grayscale hover:grayscale-0 transition-all duration-700" data-alt="Close-up of a theatrical singer in a professional self-tape setup with a neutral blue background and soft ring lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA_GX_U6dWo7uhqoGZBF08GzCwcZrEBQP6Q3DQ42mMepjlmmemqeccsGVewFgolPQcRTQRJmwgFxLJXGUIEjgZ1O-dT5GAcbWxOCEL54j6PP3WZ2Nfb-fvdescO4MvwxkbCthmcJ3ERksTyIKbjoVHrxJkO-c3Y_DnRX5jgbu6wSm1uCY4hyn4TJCff_PrB5wDMnOsq-hvPNgyzxhaYc3EOjOMJtVAMjFhOi5G91WkxTMPnAO1sNtKDnjuPRofN-Kerg2vhAOiSLv8"/>
+          <div class="absolute inset-0 bg-black/40 flex items-center justify-center group-hover:bg-black/20 transition-colors">
+            <div class="w-16 h-16 rounded-full border border-white/30 flex items-center justify-center backdrop-blur-sm group-hover:scale-110 transition-transform duration-500">
+              <span class="material-symbols-outlined text-white text-4xl" style='font-variation-settings: "FILL" 1;'>play_arrow</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="group relative overflow-hidden bg-surface-container-low transition-transform duration-500 hover:scale-[1.01]">
+        <div class="aspect-video relative overflow-hidden">
+          <img alt="Monologue: Shakespeare" class="w-full h-full object-cover filter grayscale hover:grayscale-0 transition-all duration-700" data-alt="Dramatic black and white portrait of a theatre actor performing a monologue with intense facial expression and high contrast shadows" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB9xF3tVziR3NSLJV4_gv_WV71lzmtS43gtvZw81CqVAf_3YzDPLjrIy3-InJiqH5kB7JVut3Cep58vEcbt6tcLiIFnEeF0ZL1-L_XVdI3p9fQY2QEiY2D5KrzV2WF3vCrpcqKvLlENoNJhlZ1_0-21FTTEhj-KDLQmYx-7PellsJxF-V3yP5szDCunfCI6735i8oohVwvEWHk52EFML-H5I4aLryq28h0Yy6nyIV2eiIy0GNKV62-6oZGd0OqH1uSQIkVzLtDFEm4"/>
+          <div class="absolute inset-0 bg-black/40 flex items-center justify-center group-hover:bg-black/20 transition-colors">
+            <div class="w-16 h-16 rounded-full border border-white/30 flex items-center justify-center backdrop-blur-sm group-hover:scale-110 transition-transform duration-500">
+              <span class="material-symbols-outlined text-white text-4xl" style='font-variation-settings: "FILL" 1;'>play_arrow</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="group relative overflow-hidden bg-surface-container-low transition-transform duration-500 hover:scale-[1.01]">
+        <div class="aspect-video relative overflow-hidden">
+          <img alt="Production Highlights" class="w-full h-full object-cover filter grayscale hover:grayscale-0 transition-all duration-700" data-alt="Wide shot of a musical theatre stage production with a full ensemble and dramatic blue and gold spotlighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDGBK9APsKjjDFdd7cJ9YCua_jWsxfVeRLNccQ58rn1Spv3JLxixzzqgz1O6IdrKxOfXBpZpTbc776ooIivfC-aOilsKMzmqEJkF_tsh1Xo1-t-zi5NAxmsiHfDr3w5aJXNqdZv4OlybJtxyLEZzkr8yGCUC_X6QXcUdP7bDr79RjBKKC6R6y8ev2BnvLl4a8clvizF8kDzZALtyjMNpQeEXy05elP0wAMLzNhK7T-NCwqTFUE5LOBxxktCRHWGMuxBIfyngJ-m_D0"/>
+          <div class="absolute inset-0 bg-black/40 flex items-center justify-center group-hover:bg-black/20 transition-colors">
+            <div class="w-16 h-16 rounded-full border border-white/30 flex items-center justify-center backdrop-blur-sm group-hover:scale-110 transition-transform duration-500">
+              <span class="material-symbols-outlined text-white text-4xl" style='font-variation-settings: "FILL" 1;'>play_arrow</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+</body>
+</html>
