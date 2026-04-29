@@ -83,13 +83,29 @@
     .body-manrope { font-family: 'Manrope', sans-serif; }
     .glass-nav { backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
     .vignette-overlay { background: radial-gradient(circle, transparent 0%, rgba(0, 0, 0, 0.4) 100%); }
-
+    html { scroll-behavior: smooth; }
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+    .gallery-section {
+      scroll-margin-top: 10rem;
+    }
+    .gallery-subnav-link {
+      color: rgba(255, 255, 255, 0.55);
+      transition: color 0.3s ease;
+    }
+    .gallery-subnav-link.is-active {
+      color: #e9c176;
+    }
     .gallery-scroll-container {
       display: flex;
       overflow-x: auto;
       scroll-snap-type: x mandatory;
+      scroll-padding-inline: 1.5rem;
       scrollbar-width: none;
       -ms-overflow-style: none;
+      overscroll-behavior-x: contain;
+      padding-inline: 1.5rem;
     }
     .gallery-scroll-container::-webkit-scrollbar {
       display: none;
@@ -98,185 +114,305 @@
       flex: 0 0 auto;
       scroll-snap-align: start;
     }
-    .material-symbols-outlined {
-      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    .gallery-scroll-item:last-child {
+      scroll-snap-align: end;
+    }
+    @media (min-width: 768px) {
+      html {
+        scrollbar-color: rgba(197, 198, 205, 0.5) #000000;
+        scrollbar-width: thin;
+      }
+      html::-webkit-scrollbar {
+        width: 10px;
+      }
+      html::-webkit-scrollbar-track {
+        background: #000000;
+      }
+      html::-webkit-scrollbar-thumb {
+        background: rgba(197, 198, 205, 0.5);
+        border-radius: 999px;
+        border: 2px solid #000000;
+      }
+      html::-webkit-scrollbar-thumb:hover {
+        background: rgba(197, 198, 205, 0.68);
+      }
     }
   </style>
 </head>
 
 <body class="bg-black text-white font-body selection:bg-secondary selection:text-on-secondary">
   <!-- TopNavBar -->
-  <nav class="fixed top-0 w-full z-50 bg-[#000000]/70 backdrop-blur-md">
-    <div class="flex justify-between items-center px-6 md:px-12 py-6 w-full max-w-screen-2xl mx-auto">
-      <div class="font-newsreader text-2xl tracking-tight text-white font-headline uppercase tracking-widest">
-        ASHLEY CALZA
-      </div>
-
-      <div class="hidden md:flex items-center gap-10">
-        <a class="font-headline tracking-widest uppercase text-white hover:text-[#b9c7e4] transition-colors duration-400 hover:scale-105 transition-transform" href="index.html">HOME</a>
-        <a class="font-headline tracking-widest uppercase text-white hover:text-[#b9c7e4] transition-colors duration-400 hover:scale-105 transition-transform" href="about.html">ABOUT</a>
-        <a class="font-headline tracking-widest uppercase text-white hover:text-[#b9c7e4] transition-colors duration-400 hover:scale-105 transition-transform" href="media.html">MEDIA</a>
-        <a class="font-headline tracking-widest uppercase text-white border-b border-white pb-1 hover:scale-105 transition-transform duration-400" href="gallery.html">GALLERY</a>
-        <a class="font-headline tracking-widest uppercase text-white hover:text-[#b9c7e4] transition-colors duration-400 hover:scale-105 transition-transform" href="casting.html">FOR CASTING</a>
-        <a class="font-headline tracking-widest uppercase text-white hover:text-[#b9c7e4] transition-colors duration-400 hover:scale-105 transition-transform" href="contact.html">CONTACT</a>
-      </div>
-
-      <button class="md:hidden text-on-surface">
-        <span class="material-symbols-outlined">menu</span>
-      </button>
+  <nav class="fixed top-0 w-full z-50 bg-[#000000] flex justify-between items-center px-12 py-6 max-w-full">
+    <div class="font-newsreader text-2xl tracking-widest text-[#e5e2e1] uppercase" style="color: rgb(255, 255, 255);">
+      ASHLEY CALZA
     </div>
+
+    <div class="hidden md:flex items-center gap-10">
+      <a class="font-headline tracking-widest uppercase text-white hover:scale-105 transition-transform duration-400"
+         href="index.html"
+         style="color: rgb(255, 255, 255);">
+        HOME
+      </a>
+
+      <a class="font-headline tracking-widest uppercase text-white hover:scale-105 transition-transform duration-400"
+         href="about.html"
+         style="color: rgb(255, 255, 255);">
+        ABOUT
+      </a>
+
+      <a class="font-headline tracking-widest uppercase text-white hover:scale-105 transition-transform duration-400"
+         href="media.html"
+         style="color: rgb(255, 255, 255);">
+        MEDIA
+      </a>
+
+      <a class="font-headline tracking-widest uppercase text-white border-b border-white pb-1 hover:scale-105 transition-transform duration-400"
+         href="gallery.html"
+         style="color: rgb(255, 255, 255); border-color: rgb(255, 255, 255);">
+        GALLERY
+      </a>
+
+      <a class="font-headline tracking-widest uppercase text-white hover:scale-105 transition-transform duration-400"
+         href="casting.html"
+         style="color: rgb(255, 255, 255);">
+        FOR CASTING
+      </a>
+
+      <a class="font-headline tracking-widest uppercase text-white hover:scale-105 transition-transform duration-400"
+         href="contact.html"
+         style="color: rgb(255, 255, 255);">
+        CONTACT
+      </a>
+    </div>
+
+    <button
+      aria-controls="mobile-menu"
+      aria-expanded="false"
+      aria-label="Toggle navigation menu"
+      class="md:hidden text-[#e5e2e1]"
+      data-menu-button
+      type="button"
+      style="color: rgb(255, 255, 255);"
+    >
+      <span class="material-symbols-outlined">menu</span>
+    </button>
   </nav>
 
-  <main class="pt-32 pb-20 bg-black">
-    <!-- Hero Section / Title -->
-    <section class="px-8 md:px-16 lg:px-24 mb-20 text-center bg-black">
-      <h1 class="text-5xl md:text-7xl lg:text-8xl mb-4 font-body font-bold text-white uppercase tracking-[0.4rem]">Past Performances</h1>
-      <p class="font-label text-xs uppercase tracking-[0.3em] text-white/60 max-w-lg mx-auto"><br></p>
+  <div
+    class="md:hidden fixed top-[88px] left-0 right-0 z-[60] hidden border-t border-white/10 bg-[#000000]"
+    data-mobile-menu
+    id="mobile-menu"
+  >
+    <div class="flex flex-col gap-6 px-12 py-8">
+      <a class="font-headline tracking-widest uppercase text-white hover:scale-105 transition-transform duration-400 w-fit" href="index.html">HOME</a>
+      <a class="font-headline tracking-widest uppercase text-white hover:scale-105 transition-transform duration-400 w-fit" href="about.html">ABOUT</a>
+      <a class="font-headline tracking-widest uppercase text-white hover:scale-105 transition-transform duration-400 w-fit" href="media.html">MEDIA</a>
+      <a class="font-headline tracking-widest uppercase text-white border-b border-white pb-1 w-fit" href="gallery.html">GALLERY</a>
+      <a class="font-headline tracking-widest uppercase text-white hover:scale-105 transition-transform duration-400 w-fit" href="casting.html">FOR CASTING</a>
+      <a class="font-headline tracking-widest uppercase text-white hover:scale-105 transition-transform duration-400 w-fit" href="contact.html">CONTACT</a>
+    </div>
+  </div>
+
+  <main class="pt-32 pb-24 bg-black">
+    <section class="px-8 md:px-16 lg:px-24 pb-8 text-center bg-black">
+      <h1 class="font-manrope text-4xl md:text-7xl font-light mb-4 text-white uppercase tracking-[0.18rem] md:tracking-[0.8rem]">Past Performances</h1>
     </section>
 
-    <!-- Gallery Navigation / Filters -->
-    <div class="sticky top-[88px] z-40 bg-black backdrop-blur-md py-6 mb-12 border-y border-white/10">
-      <div class="max-w-screen-xl mx-auto px-8 flex flex-wrap justify-center gap-8">
-        <a class="font-label text-xs uppercase tracking-widest text-secondary hover:text-primary transition-colors" href="#sound-of-music">The Sound of Music</a>
-        <a class="font-label text-xs uppercase tracking-widest text-white/60 hover:text-primary transition-colors" href="#west-side-story">West Side Story</a>
-        <a class="font-label text-xs uppercase tracking-widest text-white/60 hover:text-primary transition-colors" href="#rent">Rent</a>
-        <a class="font-label text-xs uppercase tracking-widest text-white/60 hover:text-primary transition-colors" href="#pre-college">Pre-College</a>
+    <div class="sticky top-[80px] z-[45] isolate bg-black/95 backdrop-blur-xl border-y border-white/10 shadow-[0_12px_24px_rgba(0,0,0,0.4)]">
+      <div class="max-w-6xl mx-auto px-8 md:px-16 lg:px-24 py-4">
+        <div class="flex flex-wrap justify-center gap-x-8 gap-y-3">
+          <a class="gallery-subnav-link font-label text-[11px] uppercase tracking-[0.24em]" data-gallery-nav href="#little-women">Little Women</a>
+          <a class="gallery-subnav-link font-label text-[11px] uppercase tracking-[0.24em]" data-gallery-nav href="#play-that-goes-wrong">Play That Goes Wrong</a>
+          <a class="gallery-subnav-link font-label text-[11px] uppercase tracking-[0.24em]" data-gallery-nav href="#silent-sky">Silent Sky</a>
+          <a class="gallery-subnav-link font-label text-[11px] uppercase tracking-[0.24em]" data-gallery-nav href="#pre-college">Pre-College</a>
+        </div>
       </div>
     </div>
 
-    <!-- Section: The Sound of Music -->
-    <section class="mb-32 bg-black" id="sound-of-music">
-      <div class="px-8 md:px-16 lg:px-24 flex flex-col md:flex-row md:items-end justify-between mb-8 border-b border-white/10 pb-6">
-        <div>
-          <span class="font-label text-[10px] uppercase tracking-[0.4em] text-white/60"></span>
-          <h2 class="font-headline text-4xl md:text-5xl text-white mt-2">Little Women</h2>
-        </div>
-        <div class="mt-4 md:mt-0">
-          <p class="font-body text-sm text-white/60 italic"><br></p>
-        </div>
+    <section class="gallery-section py-16 md:py-20" id="little-women">
+      <div class="px-8 md:px-16 lg:px-24 mb-10 border-b border-white/10 pb-5">
+        <h2 class="font-headline text-2xl md:text-3xl text-white tracking-[0.08em]">Little Women</h2>
       </div>
-
-      <div class="gallery-scroll-container gap-6 px-8 md:px-16 lg:px-24 pb-8">
-        <div class="gallery-scroll-item w-[85vw] md:w-[60vw] lg:w-[50vw] aspect-video relative group overflow-hidden bg-white/5">
-          <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="dramatic wide shot of musical theatre actress as Maria singing on a mountain set with theatrical spotlights and lush green set pieces" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBLWI6fR5unFqt6f-DD8I380qyrY8NzYA_LzsxT-UuykTXiGa1jc4dkpuGq88V553C4w01o8qP16gpGVNLi1UDxaDuK7sfH8r3yigEiSm1snvwCUyLV2WmQbvzhGeo3Cimmuxi1e6Vb8eqU_CKpl1NZQPE0t4VjImyjWs-X7BDD1gxZ8UezziXQLJ_OOAA2z8bn0hDvxQ-hD-mwktdBMWwnYVJ5JVPQdA8KTkl_4o7QRRL4a0W51qNRcQywxTz_aV7DMTNr3rBv5rI">
-          <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-8">
-            <p class="font-label text-xs uppercase tracking-widest text-secondary">Opening Number - "The Sound of Music"</p>
-          </div>
-        </div>
-
-        <div class="gallery-scroll-item w-[85vw] md:w-[60vw] lg:w-[50vw] aspect-video relative group overflow-hidden bg-white/5">
-          <img class="w-full h-full object-cover brightness-50 grayscale transition-transform duration-700 group-hover:scale-105" data-alt="Performance clip placeholder" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBfqIKHaz5yGd4PZ8JaafETbYCmUxeXKzJiAeUBmsKsuM1ji0x3zFzlEoclW6OO_dyGUyzs8S0MdwrQOnZtwYH9JoVIGlPSRULxDZF9bMtWdf1IXUtgMGd4ygDsJ6h8QZDzzDvII4zDmKLvcijwoZAs93uzDXwriXJKmIHW4TuNkIdfvuBIrzO1uGZUz0aMU9Q4sNLR90NsZsEx1xHrVP19LQ8hj2Oj9lPIel-qJ329J6KR4L9HiKiwDU7KHY2zgjSOMcs5Zrd6mXo">
-          <a class="absolute inset-0 flex items-center justify-center" href="#">
-            <div class="bg-secondary/90 w-16 h-16 rounded-full flex items-center justify-center text-on-secondary hover:scale-110 transition-transform">
-              <span class="material-symbols-outlined text-4xl fill-1">play_arrow</span>
-            </div>
-          </a>
-          <div class="absolute bottom-6 left-6 font-label text-[10px] uppercase tracking-widest text-white/70"><br></div>
-        </div>
-
-        <div class="gallery-scroll-item w-[85vw] md:w-[40vw] aspect-[3/4] relative group overflow-hidden bg-white/5">
-          <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="theatrical performance of Maria singing to the von Trapp children in a bedroom set with soft moonlight shadows" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAYfDUErPb7UmJb6J75_LkDRDhaHkyg_W-9BsddaIftIDadP21N9AzL2ezDBKCreqrxLFRNiVlt5eGrw9c4qdi8v8wGBpEb9mBwfmOxBnTPd0oMdY8923_CA9_bmFnnJzK5wIDaYyP6UrUuCPR_neZx3KdkRiMBW_87JHvk07iu884hCJiGNGZzHLMELJkPmouNXF1WY6TTAvh09Rnx1J7p2w6HcnVcgzWBQdpASZXvcNLby5j5nne2usSyrer-ocFetyfgYkc5Swo">
-        </div>
+      <div class="gallery-scroll-container gap-6 pb-6">
+        <figure class="gallery-scroll-item w-[82vw] md:w-[58vw] lg:w-[46vw] aspect-[3/2] overflow-hidden bg-white/5">
+          <div class="h-full w-full overflow-hidden"><img alt="Little Women production photo 1" class="h-full w-full object-cover transition-transform duration-700 hover:scale-105" src="assets/Little Women 1.png"></div>
+        </figure>
+        <figure class="gallery-scroll-item w-[82vw] md:w-[58vw] lg:w-[46vw] aspect-[3/2] overflow-hidden bg-white/5">
+          <div class="h-full w-full overflow-hidden"><img alt="Little Women production photo 2" class="h-full w-full object-cover transition-transform duration-700 hover:scale-105" src="assets/Little Women 2.png"></div>
+        </figure>
+        <figure class="gallery-scroll-item w-[82vw] md:w-[58vw] lg:w-[46vw] aspect-[3/2] overflow-hidden bg-white/5">
+          <div class="h-full w-full overflow-hidden"><img alt="Little Women production photo 3" class="h-full w-full object-cover transition-transform duration-700 hover:scale-105" src="assets/Little Women 3.png"></div>
+        </figure>
+        <figure class="gallery-scroll-item w-[82vw] md:w-[58vw] lg:w-[46vw] aspect-[3/2] overflow-hidden bg-white/5">
+          <div class="h-full w-full overflow-hidden"><img alt="Little Women production photo 4" class="h-full w-full object-cover transition-transform duration-700 hover:scale-105" src="assets/Little Women 4.png"></div>
+        </figure>
+        <figure class="gallery-scroll-item w-[82vw] md:w-[58vw] lg:w-[46vw] aspect-[3/2] overflow-hidden bg-white/5">
+          <div class="h-full w-full overflow-hidden"><img alt="Little Women production photo 5" class="h-full w-full object-cover transition-transform duration-700 hover:scale-105" src="assets/Little Women 5.png"></div>
+        </figure>
       </div>
     </section>
 
-    <!-- Section: West Side Story -->
-    <section class="bg-black py-24 mb-32" id="west-side-story">
-      <div class="px-8 md:px-16 lg:px-24 mb-12">
-        <div class="max-w-screen-xl">
-          <span class="font-label text-[10px] uppercase tracking-[0.4em] text-white/60"></span>
-          <h2 class="font-headline text-4xl md:text-5xl mt-2 mb-6 text-white">The Play That Goes Wrong</h2>
-        </div>
+    <section class="gallery-section py-16 md:py-20" id="play-that-goes-wrong">
+      <div class="px-8 md:px-16 lg:px-24 mb-10 border-b border-white/10 pb-5">
+        <h2 class="font-headline text-2xl md:text-3xl text-white tracking-[0.08em]">The Play That Goes Wrong</h2>
       </div>
-
-      <div class="gallery-scroll-container gap-6 px-8 md:px-16 lg:px-24">
-        <div class="gallery-scroll-item w-[80vw] md:w-[35vw] aspect-[3/4] overflow-hidden">
-          <img class="w-full h-full object-cover" data-alt="theatre performer in a vibrant purple dress dancing energetically during the America number of West Side Story with dynamic blur" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA4fp6TQPMUP4alq_KFjhHHlUHRXbP04-VwdnyUMjqjwXl2DjYudsENeXyElGa5elTRTuVByQOJhwy_JP7nwYVm3z0oULFHNj2xrgTugihhS7t3a5jsUP_3sK0ZZR6n4mSL8nqugga497p4Iwn4WdoEPQnIX8jjbesFUgFJgKxZp4GUNPWf5m-KCl-D44EAlUYUmr1I60aqclAyIhQw7lHLYmSXjT16pnaBlKalIJdE6PTsj8P4pZCnnCtyHU5BlbHQOa6VCa26E_Y">
-        </div>
-
-        <div class="gallery-scroll-item w-[80vw] md:w-[35vw] aspect-[3/4] overflow-hidden">
-          <img class="w-full h-full object-cover" data-alt="close-up of theatre actress singing a dramatic ballad with intense emotional expression and stage makeup" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCDVPVE6-XBTIIBcvIkQzZwwKRk5SJaqxav7kv-3EjyxR0HxfOX1-MnfPftP_Bjw95JkXovPlgbiP3y356Pvi0DVI7M2V5nwqEwB6i8QfL6gKvsgjBTEYxhDm8mBTu1yD2EymSefe1-vl4LvZLzjV4i2mfTAURsuMayfIWyzi2aY6VHo71pLBSvv3gUPAuSfpKZVjrWaMM7mcXq7DXShFFKHBrXryYocFzpJqXmk5pFB4T8kNB2zKi7EpkH27MGUcK87JphTtgnM2s">
-        </div>
-
-        <div class="gallery-scroll-item w-[80vw] md:w-[50vw] aspect-video relative group overflow-hidden bg-white/5">
-          <img class="w-full h-full object-cover brightness-50" data-alt="West Side Story Video placeholder" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCLa4YssGzujXcqmxH8rVfxd0pGYQoMEm5XRUuOc_YXq6VymFvduZMpXlvXZ4ILpNn8sN4Jc7um1eWqQZ6wl-DV95F-Y-w1wee_vri1WxNBvgd1k0E02akZpwzXeLM6MN9IYTWdTWPD3LqHl4fkhJ9CahgR0FsW7a1L2ZypgCM4lPA4OQEgoxz5dEPKgblNnv6yQmMuGmRRlItw0XCqnlIGSzvCPcoV7fp_lQw_NEFUQNoSiMMYNMfdOxCHLH7xdvKwoZrUwsviAW0">
-          <a class="absolute inset-0 flex items-center justify-center" href="#">
-            <div class="bg-primary/90 w-16 h-16 rounded-full flex items-center justify-center text-on-primary hover:scale-110 transition-transform">
-              <span class="material-symbols-outlined text-4xl fill-1">play_circle</span>
-            </div>
-          </a>
-          <div class="absolute bottom-6 left-6 font-label text-[10px] uppercase tracking-widest text-white/70"><br></div>
-        </div>
+      <div class="gallery-scroll-container gap-6 pb-6">
+        <figure class="gallery-scroll-item w-[74vw] md:w-[34vw] lg:w-[28vw] aspect-[3/4] overflow-hidden bg-white/5">
+          <div class="h-full w-full overflow-hidden"><img alt="The Play That Goes Wrong production photo 1" class="h-full w-full object-cover transition-transform duration-700 hover:scale-105" src="assets/PTGW 1.png"></div>
+        </figure>
+        <figure class="gallery-scroll-item w-[74vw] md:w-[34vw] lg:w-[28vw] aspect-[3/4] overflow-hidden bg-white/5">
+          <div class="h-full w-full overflow-hidden"><img alt="The Play That Goes Wrong production photo 2" class="h-full w-full object-cover transition-transform duration-700 hover:scale-105" src="assets/PTGW 2.png"></div>
+        </figure>
+        <figure class="gallery-scroll-item w-[82vw] md:w-[52vw] lg:w-[42vw] aspect-[3/2] overflow-hidden bg-white/5">
+          <div class="h-full w-full overflow-hidden"><img alt="The Play That Goes Wrong production photo 3" class="h-full w-full object-cover transition-transform duration-700 hover:scale-105" src="assets/PTGW 3.png"></div>
+        </figure>
+        <figure class="gallery-scroll-item w-[74vw] md:w-[34vw] lg:w-[28vw] aspect-[3/4] overflow-hidden bg-white/5">
+          <div class="h-full w-full overflow-hidden"><img alt="The Play That Goes Wrong production photo 4" class="h-full w-full object-cover transition-transform duration-700 hover:scale-105" src="assets/PTGW 4.png"></div>
+        </figure>
       </div>
     </section>
 
-    <!-- Section: Rent -->
-    <section class="mb-32 bg-black" id="rent">
-      <div class="px-8 md:px-16 lg:px-24 mb-12">
-        <span class="font-label text-[10px] uppercase tracking-[0.4em] text-white/60"></span>
-        <h2 class="font-headline text-4xl md:text-5xl text-white mt-2">Silent Sky</h2>
+    <section class="gallery-section py-16 md:py-20" id="silent-sky">
+      <div class="px-8 md:px-16 lg:px-24 mb-10 border-b border-white/10 pb-5">
+        <h2 class="font-headline text-2xl md:text-3xl text-white tracking-[0.08em]">Silent Sky</h2>
       </div>
-
-      <div class="gallery-scroll-container gap-6 px-8 md:px-16 lg:px-24">
-        <div class="gallery-scroll-item w-[80vw] md:w-[45vw] aspect-square overflow-hidden relative group">
-          <img class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700" data-alt="actress playing Mimi in Rent on a gritty loft set leaning against a metal fire escape in dramatic cinematic lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAHYkPFe2gHlXNWrHEqAu1JrtjuU43Y8bmvBzmmlRF7DJn9i889BAiTihbvfCslkSxUPV4h8UNzTE7SvKWh82UqknoAzuWZrBK7EsMR9n6T5g5iVnQvIcXAY3cQ79iAU7hTUbIp4Gbk67vQMCf7s_SDw60v40tttxSiVOfFp6IEYKkl40alRQd0zlyiAkXNigI71qokzJjKl8hIARnUPBc2Imbonmh0dqPbBc0eI2J_dNQz4JmnR1CdhH3PiKOex1fkHPIp8LQbpp4">
-        </div>
-
-        <div class="gallery-scroll-item w-[80vw] md:w-[45vw] aspect-square overflow-hidden relative group">
-          <img class="w-full h-full object-cover brightness-50" data-alt="Rent stage lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD7VUyjoXOv8Ubjl6MWJJx4WK87laSI0PGUw3cW3bHO9cIGrG6EJ4By-kfJ6nTuoEy6392p4-MxZJahgiXGjHT_q5DMrDGyyLeQdgUSkxI3_2eU5IBCEVCpd5m8VmRMzZ4u1Ooa5vrMwy5GLJam2G_SBa0NM0ltUEhvqFocVQrR26vjDQlFPZZXfOQH9BkofDEsCLCQMfu1IpRjphRjj-t4nWAmcO8NeX5IQP3JY73L49kf7cZ9OYuBGPNi6iAvaxa-h0trpYMYzHE">
-          <a class="absolute inset-0 flex items-center justify-center" href="#">
-            <div class="bg-secondary/90 w-16 h-16 rounded-full flex items-center justify-center text-on-secondary hover:scale-110 transition-transform">
-              <span class="material-symbols-outlined text-4xl fill-1">videocam</span>
-            </div>
-          </a>
-          <div class="absolute bottom-6 left-6 font-label text-[10px] uppercase tracking-widest text-white/70"><br></div>
-        </div>
-
-        <div class="gallery-scroll-item w-[80vw] md:w-[30vw] aspect-[3/4] overflow-hidden">
-          <img class="w-full h-full object-cover" data-alt="actress during curtain call of Rent smiling widely under warm stage lights with cast members in the background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAffMcctQys1w2t28hNdrQcPoxkPJlR0vSWgmZXsbmaOpkLc2vXDN_9UwpGWdxw99OxHlFS1lnwjW96CofzyKnCWxcpacUFOW0zJ15NW8IYzE8eztDQGoGr1WX5SEJMWYecBb_yQ4cWVa9i-Cjwj-tZDiC60YeR2y3fx6UGk8Z-pzXlky5ObBvTa7SGuIpqCHxynvvUyX4-WhHLFiVBBq96agit5M9HC_a35g1UNCd2LcC7Z1aMhbh1YzYnvYSRWXO8oE62HrqP00o">
-        </div>
+      <div class="gallery-scroll-container gap-6 pb-6">
+        <figure class="gallery-scroll-item w-[82vw] md:w-[52vw] lg:w-[42vw] aspect-[3/2] overflow-hidden bg-white/5">
+          <div class="h-full w-full overflow-hidden"><img alt="Silent Sky production photo 1" class="h-full w-full object-cover transition-transform duration-700 hover:scale-105" src="assets/Silent Sky 1.png"></div>
+        </figure>
+        <figure class="gallery-scroll-item w-[82vw] md:w-[52vw] lg:w-[42vw] aspect-[3/2] overflow-hidden bg-white/5">
+          <div class="h-full w-full overflow-hidden"><img alt="Silent Sky production photo 2" class="h-full w-full object-cover transition-transform duration-700 hover:scale-105" src="assets/Silent Sky 2.png"></div>
+        </figure>
+        <figure class="gallery-scroll-item w-[82vw] md:w-[52vw] lg:w-[42vw] aspect-[3/2] overflow-hidden bg-white/5">
+          <div class="h-full w-full overflow-hidden"><img alt="Silent Sky production photo 3" class="h-full w-full object-cover transition-transform duration-700 hover:scale-105" src="assets/Silent Sky 3.png"></div>
+        </figure>
+        <figure class="gallery-scroll-item w-[82vw] md:w-[52vw] lg:w-[42vw] aspect-[3/2] overflow-hidden bg-white/5">
+          <div class="h-full w-full overflow-hidden"><img alt="Silent Sky production photo 4" class="h-full w-full object-cover transition-transform duration-700 hover:scale-105" src="assets/Silent Sky 4.png"></div>
+        </figure>
+        <figure class="gallery-scroll-item w-[82vw] md:w-[52vw] lg:w-[42vw] aspect-[3/2] overflow-hidden bg-white/5">
+          <div class="h-full w-full overflow-hidden"><img alt="Silent Sky production photo 5" class="h-full w-full object-cover transition-transform duration-700 hover:scale-105" src="assets/Silent Sky 5.png"></div>
+        </figure>
       </div>
     </section>
 
-    <!-- Section: Pre-College Performances -->
-    <section class="bg-black py-24 mb-32" id="pre-college">
-      <div class="px-8 md:px-16 lg:px-24 mb-12 flex flex-col md:flex-row md:items-end justify-between border-b border-white/10 pb-6">
-        <div>
-          <span class="font-label text-[10px] uppercase tracking-[0.4em] text-white/60"></span>
-          <h2 class="font-headline text-4xl md:text-5xl text-white mt-2">Pre-College Performances</h2>
-        </div>
-        <div class="mt-4 md:mt-0">
-          <p class="font-body text-sm text-white/60 italic"><br></p>
-        </div>
+    <section class="gallery-section py-16 md:py-20" id="pre-college">
+      <div class="px-8 md:px-16 lg:px-24 mb-10 border-b border-white/10 pb-5">
+        <h2 class="font-headline text-2xl md:text-3xl text-white tracking-[0.08em]">Pre-College</h2>
       </div>
-
-      <div class="gallery-scroll-container gap-6 px-8 md:px-16 lg:px-24">
-        <div class="gallery-scroll-item w-[85vw] md:w-[45vw] aspect-video relative group overflow-hidden bg-white/5">
-          <img class="w-full h-full object-cover" data-alt="young performer on stage in a high school musical production" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBN5u05m7rL39k7_e0Ecl7B_Y5J7u4i9iO0iW5W5W5W5W5W5W5W5W5W5W5W5W5W5W5W5W5W5W5W5W5W5W5W5W5W5W5W5W5W5W5W5W5W5W5W5W">
-          <div class="absolute bottom-6 left-6 font-label text-[10px] uppercase tracking-widest text-white/70"><br></div>
-        </div>
-
-        <div class="gallery-scroll-item w-[85vw] md:w-[35vw] aspect-[3/4] overflow-hidden">
-          <img class="w-full h-full object-cover" data-alt="headshot from a regional youth theatre production" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBN5u05m7rL39k7_e0Ecl7B_Y5J7u4i9iO0iW5W5W5W5W5W5W5W5W5W5W5W5W5W5W5W5W5W5W5W5W5W5W5W5W5W5W5W5W5W5W5W5W5W5W5W5W5W5W">
-        </div>
-
-        <div class="gallery-scroll-item w-[85vw] md:w-[50vw] aspect-video relative group overflow-hidden bg-white/5">
-          <img class="w-full h-full object-cover brightness-50" data-alt="video thumbnail of a dance recital" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBN5u05m7rL39k7_e0Ecl7B_Y5J7u4i9iO0iW5W5W5W5W5W5W5W5W5W5W5W5W5W5W5W5W5W5W5W5W5W5W5W5W5W5W5W5W5W5W5W5W5W5W5W5W5W5W">
-          <a class="absolute inset-0 flex items-center justify-center" href="#">
-            <div class="bg-secondary/90 w-16 h-16 rounded-full flex items-center justify-center text-on-secondary hover:scale-110 transition-transform">
-              <span class="material-symbols-outlined text-4xl fill-1">play_arrow</span>
-            </div>
-          </a>
-          <div class="absolute bottom-6 left-6 font-label text-[10px] uppercase tracking-widest text-white/70"><br></div>
-        </div>
+      <div class="gallery-scroll-container gap-6 pb-6">
+        <figure class="gallery-scroll-item w-[82vw] md:w-[52vw] lg:w-[42vw] aspect-[3/2] overflow-hidden bg-white/5">
+          <div class="h-full w-full overflow-hidden"><img alt="Pre-College production photo 1" class="h-full w-full object-cover transition-transform duration-700 hover:scale-105" src="assets/Pre-Collage 1.png"></div>
+        </figure>
+        <figure class="gallery-scroll-item w-[82vw] md:w-[52vw] lg:w-[42vw] aspect-[3/2] overflow-hidden bg-white/5">
+          <div class="h-full w-full overflow-hidden"><img alt="Pre-College production photo 2" class="h-full w-full object-cover transition-transform duration-700 hover:scale-105" src="assets/Pre-College 2.png"></div>
+        </figure>
+        <figure class="gallery-scroll-item w-[82vw] md:w-[52vw] lg:w-[42vw] aspect-[3/2] overflow-hidden bg-white/5">
+          <div class="h-full w-full overflow-hidden"><img alt="Pre-College production photo 3" class="h-full w-full object-cover transition-transform duration-700 hover:scale-105" src="assets/Pre-College 3.png"></div>
+        </figure>
+        <figure class="gallery-scroll-item w-[82vw] md:w-[52vw] lg:w-[42vw] aspect-[3/2] overflow-hidden bg-white/5">
+          <div class="h-full w-full overflow-hidden"><img alt="Pre-College production photo 4" class="h-full w-full object-cover transition-transform duration-700 hover:scale-105" src="assets/Pre-College 4.png"></div>
+        </figure>
+        <figure class="gallery-scroll-item w-[82vw] md:w-[52vw] lg:w-[42vw] aspect-[3/2] overflow-hidden bg-white/5">
+          <div class="h-full w-full overflow-hidden"><img alt="Pre-College production photo 5" class="h-full w-full object-cover transition-transform duration-700 hover:scale-105" src="assets/Pre-College 5.png"></div>
+        </figure>
+        <figure class="gallery-scroll-item w-[82vw] md:w-[52vw] lg:w-[42vw] aspect-[3/2] overflow-hidden bg-white/5">
+          <div class="h-full w-full overflow-hidden"><img alt="Pre-College production photo 6" class="h-full w-full object-cover transition-transform duration-700 hover:scale-105" src="assets/Pre-college 6.png"></div>
+        </figure>
+        <figure class="gallery-scroll-item w-[82vw] md:w-[52vw] lg:w-[42vw] aspect-[3/2] overflow-hidden bg-white/5">
+          <div class="h-full w-full overflow-hidden"><img alt="Pre-College production photo 7" class="h-full w-full object-cover transition-transform duration-700 hover:scale-105" src="assets/Pre-College 7.png"></div>
+        </figure>
       </div>
     </section>
   </main>
+  <script>
+    (() => {
+      const menuButton = document.querySelector("[data-menu-button]");
+      const mobileMenu = document.querySelector("[data-mobile-menu]");
+      const menuIcon = menuButton?.querySelector(".material-symbols-outlined");
 
-  <footer class="bg-black py-12 border-t border-white/10">
-    <div class="max-w-screen-xl mx-auto px-8 text-center text-white/40 font-label text-[10px] uppercase tracking-widest">
-      © 2024 Ashley Calza. All rights reserved.
-    </div>
-  </footer>
+      if (!menuButton || !mobileMenu || !menuIcon) {
+        return;
+      }
+
+      const closeMenu = () => {
+        mobileMenu.classList.add("hidden");
+        menuButton.setAttribute("aria-expanded", "false");
+        menuIcon.textContent = "menu";
+        document.body.classList.remove("overflow-hidden");
+      };
+
+      const openMenu = () => {
+        mobileMenu.classList.remove("hidden");
+        menuButton.setAttribute("aria-expanded", "true");
+        menuIcon.textContent = "close";
+        document.body.classList.add("overflow-hidden");
+      };
+
+      menuButton.addEventListener("click", () => {
+        const isOpen = !mobileMenu.classList.contains("hidden");
+        if (isOpen) {
+          closeMenu();
+          return;
+        }
+        openMenu();
+      });
+
+      mobileMenu.querySelectorAll("a").forEach((link) => {
+        link.addEventListener("click", closeMenu);
+      });
+
+      window.addEventListener("resize", () => {
+        if (window.innerWidth >= 768) {
+          closeMenu();
+        }
+      });
+    })();
+  </script>
+
+  <script>
+    (() => {
+      const navLinks = Array.from(document.querySelectorAll("[data-gallery-nav]"));
+      const sections = navLinks
+        .map((link) => document.querySelector(link.getAttribute("href")))
+        .filter(Boolean);
+
+      if (!navLinks.length || !sections.length) {
+        return;
+      }
+
+      const setActiveLink = (sectionId) => {
+        navLinks.forEach((link) => {
+          const isActive = link.getAttribute("href") === `#${sectionId}`;
+          link.classList.toggle("is-active", isActive);
+        });
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        const visibleEntry = entries
+          .filter((entry) => entry.isIntersecting)
+          .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+
+        if (visibleEntry) {
+          setActiveLink(visibleEntry.target.id);
+        }
+      }, {
+        rootMargin: "-35% 0px -45% 0px",
+        threshold: [0.15, 0.3, 0.5]
+      });
+
+      sections.forEach((section) => observer.observe(section));
+
+      navLinks.forEach((link) => {
+        link.addEventListener("click", () => {
+          const targetId = link.getAttribute("href")?.slice(1);
+          if (targetId) {
+            setActiveLink(targetId);
+          }
+        });
+      });
+
+      setActiveLink(sections[0].id);
+    })();
+  </script>
 </body>
 </html>

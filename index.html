@@ -88,6 +88,26 @@
     .text-glow {
       text-shadow: 0 0 30px rgba(255, 255, 255, 0.2);
     }
+    @media (min-width: 768px) {
+      html {
+        scrollbar-color: rgba(197, 198, 205, 0.5) #000000;
+        scrollbar-width: thin;
+      }
+      html::-webkit-scrollbar {
+        width: 10px;
+      }
+      html::-webkit-scrollbar-track {
+        background: #000000;
+      }
+      html::-webkit-scrollbar-thumb {
+        background: rgba(197, 198, 205, 0.5);
+        border-radius: 999px;
+        border: 2px solid #000000;
+      }
+      html::-webkit-scrollbar-thumb:hover {
+        background: rgba(197, 198, 205, 0.68);
+      }
+    }
   </style>
 </head>
 
@@ -106,42 +126,65 @@
         HOME
       </a>
 
-      <a class="font-headline tracking-widest uppercase text-white hover:text-[#b9c7e4] transition-colors duration-400 hover:scale-105 transition-transform"
+      <a class="font-headline tracking-widest uppercase text-white hover:scale-105 transition-transform duration-400"
          href="about.html"
          style="color: rgb(255, 255, 255);">
         ABOUT
       </a>
 
-      <a class="font-headline tracking-widest uppercase text-white hover:text-[#b9c7e4] transition-colors duration-400 hover:scale-105 transition-transform"
+      <a class="font-headline tracking-widest uppercase text-white hover:scale-105 transition-transform duration-400"
          href="media.html"
          style="color: rgb(255, 255, 255);">
         MEDIA
       </a>
 
-      <a class="font-headline tracking-widest uppercase text-white hover:text-[#b9c7e4] transition-colors duration-400 hover:scale-105 transition-transform"
+      <a class="font-headline tracking-widest uppercase text-white hover:scale-105 transition-transform duration-400"
          href="gallery.html"
          style="color: rgb(255, 255, 255);">
         GALLERY
       </a>
 
-      <a class="font-headline tracking-widest uppercase text-white hover:text-[#b9c7e4] transition-colors duration-400 hover:scale-105 transition-transform"
+      <a class="font-headline tracking-widest uppercase text-white hover:scale-105 transition-transform duration-400"
          href="casting.html"
          style="color: rgb(255, 255, 255);">
         FOR CASTING
       </a>
 
-      <a class="font-headline tracking-widest uppercase text-white hover:text-[#b9c7e4] transition-colors duration-400 hover:scale-105 transition-transform"
+      <a class="font-headline tracking-widest uppercase text-white hover:scale-105 transition-transform duration-400"
          href="contact.html"
          style="color: rgb(255, 255, 255);">
         CONTACT
       </a>
     </div>
 
-    <!-- Mobile Menu Toggle (Simplified) -->
-    <div class="md:hidden">
-      <span class="material-symbols-outlined text-[#e5e2e1]" style="color: rgb(255, 255, 255);">menu</span>
-    </div>
+    <!-- Mobile Menu Toggle -->
+    <button
+      aria-controls="mobile-menu"
+      aria-expanded="false"
+      aria-label="Toggle navigation menu"
+      class="md:hidden text-[#e5e2e1]"
+      data-menu-button
+      type="button"
+      style="color: rgb(255, 255, 255);"
+    >
+      <span class="material-symbols-outlined">menu</span>
+    </button>
   </nav>
+
+  <div
+    class="md:hidden fixed top-[88px] left-0 right-0 z-[45] hidden border-t border-white/10 bg-[#000000]"
+    data-mobile-menu
+    id="mobile-menu"
+  >
+    <div class="flex flex-col gap-6 px-12 py-8">
+      <a class="font-headline tracking-widest uppercase text-white border-b border-white pb-1 w-fit" href="index.html">HOME</a>
+      <a class="font-headline tracking-widest uppercase text-white hover:scale-105 transition-transform duration-400 w-fit" href="about.html">ABOUT</a>
+      <a class="font-headline tracking-widest uppercase text-white hover:scale-105 transition-transform duration-400 w-fit" href="media.html">MEDIA</a>
+      <a class="font-headline tracking-widest uppercase text-white hover:scale-105 transition-transform duration-400 w-fit" href="gallery.html">GALLERY</a>
+      <a class="font-headline tracking-widest uppercase text-white hover:scale-105 transition-transform duration-400 w-fit" href="casting.html">FOR CASTING</a>
+      <a class="font-headline tracking-widest uppercase text-white hover:scale-105 transition-transform duration-400 w-fit" href="contact.html">CONTACT</a>
+    </div>
+  </div>
 
   <!-- Hero Section -->
   <main class="relative h-screen w-full overflow-hidden flex items-center justify-center">
@@ -170,20 +213,52 @@
         </p>
         <span class="h-px w-8 bg-secondary/30 hidden md:block"></span>
       </div>
-
-      <!-- Secondary CTA for mobile or subtle interaction -->
-      <div class="mt-12 opacity-0 hover:opacity-100 transition-opacity duration-700">
-        <a href="gallery.html" class="bg-secondary text-on-secondary px-8 py-3 rounded text-xs font-bold tracking-widest uppercase hover:scale-105 transition-transform duration-400">
-          Enter Portfolio
-        </a>
-      </div>
     </div>
   </main>
 
-  <!-- Footer -->
-  <footer class="bg-[#000000] w-full py-10 flex flex-col items-center justify-center">
-    <div class="flex gap-8 mb-6"></div>
-    <p class="font-manrope text-[10px] uppercase tracking-[0.1rem] text-[#e5e2e1]/50" style="color: rgb(255, 255, 255); opacity: 0.8;"><br></p>
-  </footer>
+  <script>
+    (() => {
+      const menuButton = document.querySelector("[data-menu-button]");
+      const mobileMenu = document.querySelector("[data-mobile-menu]");
+      const menuIcon = menuButton?.querySelector(".material-symbols-outlined");
+
+      if (!menuButton || !mobileMenu || !menuIcon) {
+        return;
+      }
+
+      const closeMenu = () => {
+        mobileMenu.classList.add("hidden");
+        menuButton.setAttribute("aria-expanded", "false");
+        menuIcon.textContent = "menu";
+        document.body.classList.remove("overflow-hidden");
+      };
+
+      const openMenu = () => {
+        mobileMenu.classList.remove("hidden");
+        menuButton.setAttribute("aria-expanded", "true");
+        menuIcon.textContent = "close";
+        document.body.classList.add("overflow-hidden");
+      };
+
+      menuButton.addEventListener("click", () => {
+        const isOpen = !mobileMenu.classList.contains("hidden");
+        if (isOpen) {
+          closeMenu();
+          return;
+        }
+        openMenu();
+      });
+
+      mobileMenu.querySelectorAll("a").forEach((link) => {
+        link.addEventListener("click", closeMenu);
+      });
+
+      window.addEventListener("resize", () => {
+        if (window.innerWidth >= 768) {
+          closeMenu();
+        }
+      });
+    })();
+  </script>
 </body>
 </html>

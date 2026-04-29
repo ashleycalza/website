@@ -82,84 +82,293 @@
     .material-symbols-outlined {
       font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
     }
+    @media (min-width: 768px) {
+      html {
+        scrollbar-color: rgba(197, 198, 205, 0.5) #000000;
+        scrollbar-width: thin;
+      }
+      html::-webkit-scrollbar {
+        width: 10px;
+      }
+      html::-webkit-scrollbar-track {
+        background: #000000;
+      }
+      html::-webkit-scrollbar-thumb {
+        background: rgba(197, 198, 205, 0.5);
+        border-radius: 999px;
+        border: 2px solid #000000;
+      }
+      html::-webkit-scrollbar-thumb:hover {
+        background: rgba(197, 198, 205, 0.68);
+      }
+    }
   </style>
 </head>
 
 <body class="text-on-surface font-body selection:bg-secondary selection:text-on-secondary">
   <!-- TopNavBar -->
-  <nav class="fixed top-0 w-full z-50 bg-[#000000]/70 backdrop-blur-md">
-    <div class="flex justify-between items-center px-6 md:px-12 py-6 w-full max-w-screen-2xl mx-auto">
-      <div class="font-newsreader text-2xl tracking-tight text-white font-headline uppercase tracking-widest">
-        ASHLEY CALZA
-      </div>
-
-      <div class="hidden md:flex items-center gap-10">
-        <a class="font-headline tracking-widest uppercase text-white hover:text-[#b9c7e4] transition-colors duration-400 hover:scale-105 transition-transform" href="index.html">HOME</a>
-        <a class="font-headline tracking-widest uppercase text-white hover:text-[#b9c7e4] transition-colors duration-400 hover:scale-105 transition-transform" href="about.html">ABOUT</a>
-        <a class="font-headline tracking-widest uppercase text-white border-b border-white pb-1 hover:scale-105 transition-transform duration-400" href="media.html">MEDIA</a>
-        <a class="font-headline tracking-widest uppercase text-white hover:text-[#b9c7e4] transition-colors duration-400 hover:scale-105 transition-transform" href="gallery.html">GALLERY</a>
-        <a class="font-headline tracking-widest uppercase text-white hover:text-[#b9c7e4] transition-colors duration-400 hover:scale-105 transition-transform" href="casting.html">FOR CASTING</a>
-        <a class="font-headline tracking-widest uppercase text-white hover:text-[#b9c7e4] transition-colors duration-400 hover:scale-105 transition-transform" href="contact.html">CONTACT</a>
-      </div>
-
-      <!-- Mobile Menu Toggle -->
-      <button class="md:hidden text-on-surface">
-        <span class="material-symbols-outlined">menu</span>
-      </button>
+  <nav class="fixed top-0 w-full z-50 bg-[#000000] flex justify-between items-center px-12 py-6 max-w-full">
+    <div class="font-newsreader text-2xl tracking-widest text-[#e5e2e1] uppercase" style="color: rgb(255, 255, 255);">
+      ASHLEY CALZA
     </div>
+
+    <div class="hidden md:flex items-center gap-10">
+      <a class="font-headline tracking-widest uppercase text-white hover:scale-105 transition-transform duration-400"
+         href="index.html"
+         style="color: rgb(255, 255, 255);">
+        HOME
+      </a>
+
+      <a class="font-headline tracking-widest uppercase text-white hover:scale-105 transition-transform duration-400"
+         href="about.html"
+         style="color: rgb(255, 255, 255);">
+        ABOUT
+      </a>
+
+      <a class="font-headline tracking-widest uppercase text-white border-b border-white pb-1 hover:scale-105 transition-transform duration-400"
+         href="media.html"
+         style="color: rgb(255, 255, 255); border-color: rgb(255, 255, 255);">
+        MEDIA
+      </a>
+
+      <a class="font-headline tracking-widest uppercase text-white hover:scale-105 transition-transform duration-400"
+         href="gallery.html"
+         style="color: rgb(255, 255, 255);">
+        GALLERY
+      </a>
+
+      <a class="font-headline tracking-widest uppercase text-white hover:scale-105 transition-transform duration-400"
+         href="casting.html"
+         style="color: rgb(255, 255, 255);">
+        FOR CASTING
+      </a>
+
+      <a class="font-headline tracking-widest uppercase text-white hover:scale-105 transition-transform duration-400"
+         href="contact.html"
+         style="color: rgb(255, 255, 255);">
+        CONTACT
+      </a>
+    </div>
+
+    <!-- Mobile Menu Toggle -->
+    <button
+      aria-controls="mobile-menu"
+      aria-expanded="false"
+      aria-label="Toggle navigation menu"
+      class="md:hidden text-[#e5e2e1]"
+      data-menu-button
+      type="button"
+      style="color: rgb(255, 255, 255);"
+    >
+      <span class="material-symbols-outlined">menu</span>
+    </button>
   </nav>
+
+  <div
+    class="md:hidden fixed top-[88px] left-0 right-0 z-[45] hidden border-t border-white/10 bg-[#000000]"
+    data-mobile-menu
+    id="mobile-menu"
+  >
+    <div class="flex flex-col gap-6 px-12 py-8">
+      <a class="font-headline tracking-widest uppercase text-white hover:scale-105 transition-transform duration-400 w-fit" href="index.html">HOME</a>
+      <a class="font-headline tracking-widest uppercase text-white hover:scale-105 transition-transform duration-400 w-fit" href="about.html">ABOUT</a>
+      <a class="font-headline tracking-widest uppercase text-white border-b border-white pb-1 w-fit" href="media.html">MEDIA</a>
+      <a class="font-headline tracking-widest uppercase text-white hover:scale-105 transition-transform duration-400 w-fit" href="gallery.html">GALLERY</a>
+      <a class="font-headline tracking-widest uppercase text-white hover:scale-105 transition-transform duration-400 w-fit" href="casting.html">FOR CASTING</a>
+      <a class="font-headline tracking-widest uppercase text-white hover:scale-105 transition-transform duration-400 w-fit" href="contact.html">CONTACT</a>
+    </div>
+  </div>
 
   <main class="min-h-screen pt-40 pb-24 px-6 md:px-12">
     <header class="max-w-screen-2xl mx-auto mb-20 text-center">
-      <h1 class="font-headline text-5xl md:text-7xl uppercase tracking-[0.4rem] text-white">Self Tapes</h1>
+      <h1 class="font-manrope text-5xl md:text-7xl font-light uppercase tracking-[0.35rem] md:tracking-[0.8rem] text-white">Self Tapes</h1>
     </header>
 
     <section class="max-w-screen-2xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
       <div class="group relative overflow-hidden bg-surface-container-low transition-transform duration-500 hover:scale-[1.01]">
-        <div class="aspect-video relative overflow-hidden">
-          <img alt="Dance Reel Performance" class="w-full h-full object-cover filter grayscale hover:grayscale-0 transition-all duration-700" data-alt="Professional musical theatre performer executing a high-energy Broadway dance routine under dramatic stage lighting with theatrical background atmosphere" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAdVE5mHVaweyWDNWjw6K3e0V4sqTSVSf3g85ly9cId3hYJlmkdFOQrmwAi_nzK1xtNrALFwRePfBlSGlBizBh5zN-6QVyhSCzdr_C4ZgtHUEhxGSQ7Gf5396LXlxm4ySkIgUVtj50B-DxAh4Ehr0GwXiJdB_mN8dE0mheFsdTvegvyTN4m4R61CNxvHPB-q1unFB-AmfRPOQYmfVeCewnePFHn8tMIyt7aMG_UEg-SAmMiXjaJH3qESjc3c09kUWT9ZPbqKymCtf0"/>
-          <div class="absolute inset-0 bg-black/40 flex items-center justify-center group-hover:bg-black/20 transition-colors">
-            <div class="w-16 h-16 rounded-full border border-white/30 flex items-center justify-center backdrop-blur-sm group-hover:scale-110 transition-transform duration-500">
-              <span class="material-symbols-outlined text-white text-4xl" style='font-variation-settings: "FILL" 1;'>play_arrow</span>
+        <div class="aspect-video relative overflow-hidden" data-youtube-embed data-video-id="r90rp5Gp2Bg" data-video-title="Over The Rainbow from The Wizard of Oz">
+          <button
+            aria-label="Play Over The Rainbow from The Wizard of Oz"
+            class="absolute inset-0 block h-full w-full"
+            data-youtube-trigger
+            type="button"
+          >
+            <img alt="Over The Rainbow from The Wizard of Oz" class="w-full h-full object-cover filter grayscale transition-all duration-700 group-hover:grayscale-0" data-thumbnail-fallback="https://i.ytimg.com/vi/r90rp5Gp2Bg/hqdefault.jpg" data-youtube-thumbnail src="https://i.ytimg.com/vi/r90rp5Gp2Bg/maxresdefault.jpg"/>
+            <div class="absolute inset-0 bg-black/40 flex items-center justify-center group-hover:bg-black/20 transition-colors">
+              <div class="w-16 h-16 rounded-full border border-white/30 flex items-center justify-center backdrop-blur-sm group-hover:scale-110 transition-transform duration-500">
+                <span class="material-symbols-outlined text-white text-4xl" style='font-variation-settings: "FILL" 1;'>play_arrow</span>
+              </div>
             </div>
-          </div>
+          </button>
+        </div>
+        <div class="border-t border-white/10 px-5 py-4">
+          <p class="font-manrope text-sm md:text-base font-medium uppercase tracking-[0.18rem] text-white">Over The Rainbow</p>
+          <p class="font-newsreader text-base italic text-white/70">The Wizard of Oz</p>
         </div>
       </div>
 
       <div class="group relative overflow-hidden bg-surface-container-low transition-transform duration-500 hover:scale-[1.01]">
-        <div class="aspect-video relative overflow-hidden">
-          <img alt="Audition Song: Wicked" class="w-full h-full object-cover filter grayscale hover:grayscale-0 transition-all duration-700" data-alt="Close-up of a theatrical singer in a professional self-tape setup with a neutral blue background and soft ring lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA_GX_U6dWo7uhqoGZBF08GzCwcZrEBQP6Q3DQ42mMepjlmmemqeccsGVewFgolPQcRTQRJmwgFxLJXGUIEjgZ1O-dT5GAcbWxOCEL54j6PP3WZ2Nfb-fvdescO4MvwxkbCthmcJ3ERksTyIKbjoVHrxJkO-c3Y_DnRX5jgbu6wSm1uCY4hyn4TJCff_PrB5wDMnOsq-hvPNgyzxhaYc3EOjOMJtVAMjFhOi5G91WkxTMPnAO1sNtKDnjuPRofN-Kerg2vhAOiSLv8"/>
-          <div class="absolute inset-0 bg-black/40 flex items-center justify-center group-hover:bg-black/20 transition-colors">
-            <div class="w-16 h-16 rounded-full border border-white/30 flex items-center justify-center backdrop-blur-sm group-hover:scale-110 transition-transform duration-500">
-              <span class="material-symbols-outlined text-white text-4xl" style='font-variation-settings: "FILL" 1;'>play_arrow</span>
+        <div class="aspect-video relative overflow-hidden" data-youtube-embed data-video-id="cDg9EOcyQWs" data-video-title="Yellow by Coldplay">
+          <button
+            aria-label="Play Yellow by Coldplay"
+            class="absolute inset-0 block h-full w-full"
+            data-youtube-trigger
+            type="button"
+          >
+            <img alt="Yellow by Coldplay" class="w-full h-full object-cover filter grayscale transition-all duration-700 group-hover:grayscale-0" data-thumbnail-fallback="https://i.ytimg.com/vi/cDg9EOcyQWs/hqdefault.jpg" data-youtube-thumbnail src="https://i.ytimg.com/vi/cDg9EOcyQWs/maxresdefault.jpg"/>
+            <div class="absolute inset-0 bg-black/40 flex items-center justify-center group-hover:bg-black/20 transition-colors">
+              <div class="w-16 h-16 rounded-full border border-white/30 flex items-center justify-center backdrop-blur-sm group-hover:scale-110 transition-transform duration-500">
+                <span class="material-symbols-outlined text-white text-4xl" style='font-variation-settings: "FILL" 1;'>play_arrow</span>
+              </div>
             </div>
-          </div>
+          </button>
+        </div>
+        <div class="border-t border-white/10 px-5 py-4">
+          <p class="font-manrope text-sm md:text-base font-medium uppercase tracking-[0.18rem] text-white">Yellow</p>
+          <p class="font-newsreader text-base italic text-white/70">Coldplay</p>
         </div>
       </div>
 
       <div class="group relative overflow-hidden bg-surface-container-low transition-transform duration-500 hover:scale-[1.01]">
-        <div class="aspect-video relative overflow-hidden">
-          <img alt="Monologue: Shakespeare" class="w-full h-full object-cover filter grayscale hover:grayscale-0 transition-all duration-700" data-alt="Dramatic black and white portrait of a theatre actor performing a monologue with intense facial expression and high contrast shadows" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB9xF3tVziR3NSLJV4_gv_WV71lzmtS43gtvZw81CqVAf_3YzDPLjrIy3-InJiqH5kB7JVut3Cep58vEcbt6tcLiIFnEeF0ZL1-L_XVdI3p9fQY2QEiY2D5KrzV2WF3vCrpcqKvLlENoNJhlZ1_0-21FTTEhj-KDLQmYx-7PellsJxF-V3yP5szDCunfCI6735i8oohVwvEWHk52EFML-H5I4aLryq28h0Yy6nyIV2eiIy0GNKV62-6oZGd0OqH1uSQIkVzLtDFEm4"/>
-          <div class="absolute inset-0 bg-black/40 flex items-center justify-center group-hover:bg-black/20 transition-colors">
-            <div class="w-16 h-16 rounded-full border border-white/30 flex items-center justify-center backdrop-blur-sm group-hover:scale-110 transition-transform duration-500">
-              <span class="material-symbols-outlined text-white text-4xl" style='font-variation-settings: "FILL" 1;'>play_arrow</span>
+        <div class="aspect-video relative overflow-hidden" data-youtube-embed data-video-id="Y43pKDyfmkY" data-video-title="All You Wanna Do from SIX">
+          <button
+            aria-label="Play All You Wanna Do from SIX"
+            class="absolute inset-0 block h-full w-full"
+            data-youtube-trigger
+            type="button"
+          >
+            <img alt="All You Wanna Do from SIX" class="w-full h-full object-cover filter grayscale transition-all duration-700 group-hover:grayscale-0" data-thumbnail-fallback="https://i.ytimg.com/vi/Y43pKDyfmkY/hqdefault.jpg" data-youtube-thumbnail src="https://i.ytimg.com/vi/Y43pKDyfmkY/maxresdefault.jpg"/>
+            <div class="absolute inset-0 bg-black/40 flex items-center justify-center group-hover:bg-black/20 transition-colors">
+              <div class="w-16 h-16 rounded-full border border-white/30 flex items-center justify-center backdrop-blur-sm group-hover:scale-110 transition-transform duration-500">
+                <span class="material-symbols-outlined text-white text-4xl" style='font-variation-settings: "FILL" 1;'>play_arrow</span>
+              </div>
             </div>
-          </div>
+          </button>
+        </div>
+        <div class="border-t border-white/10 px-5 py-4">
+          <p class="font-manrope text-sm md:text-base font-medium uppercase tracking-[0.18rem] text-white">All You Wanna Do</p>
+          <p class="font-newsreader text-base italic text-white/70">SIX</p>
         </div>
       </div>
 
       <div class="group relative overflow-hidden bg-surface-container-low transition-transform duration-500 hover:scale-[1.01]">
-        <div class="aspect-video relative overflow-hidden">
-          <img alt="Production Highlights" class="w-full h-full object-cover filter grayscale hover:grayscale-0 transition-all duration-700" data-alt="Wide shot of a musical theatre stage production with a full ensemble and dramatic blue and gold spotlighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDGBK9APsKjjDFdd7cJ9YCua_jWsxfVeRLNccQ58rn1Spv3JLxixzzqgz1O6IdrKxOfXBpZpTbc776ooIivfC-aOilsKMzmqEJkF_tsh1Xo1-t-zi5NAxmsiHfDr3w5aJXNqdZv4OlybJtxyLEZzkr8yGCUC_X6QXcUdP7bDr79RjBKKC6R6y8ev2BnvLl4a8clvizF8kDzZALtyjMNpQeEXy05elP0wAMLzNhK7T-NCwqTFUE5LOBxxktCRHWGMuxBIfyngJ-m_D0"/>
-          <div class="absolute inset-0 bg-black/40 flex items-center justify-center group-hover:bg-black/20 transition-colors">
-            <div class="w-16 h-16 rounded-full border border-white/30 flex items-center justify-center backdrop-blur-sm group-hover:scale-110 transition-transform duration-500">
-              <span class="material-symbols-outlined text-white text-4xl" style='font-variation-settings: "FILL" 1;'>play_arrow</span>
+        <div class="aspect-video relative overflow-hidden" data-youtube-embed data-video-id="xtzsbsKA72Q" data-video-title="One Way Road from The Great Gatsby">
+          <button
+            aria-label="Play One Way Road from The Great Gatsby"
+            class="absolute inset-0 block h-full w-full"
+            data-youtube-trigger
+            type="button"
+          >
+            <img alt="One Way Road from The Great Gatsby" class="w-full h-full object-cover filter grayscale transition-all duration-700 group-hover:grayscale-0" data-thumbnail-fallback="https://i.ytimg.com/vi/xtzsbsKA72Q/hqdefault.jpg" data-youtube-thumbnail src="https://i.ytimg.com/vi/xtzsbsKA72Q/maxresdefault.jpg"/>
+            <div class="absolute inset-0 bg-black/40 flex items-center justify-center group-hover:bg-black/20 transition-colors">
+              <div class="w-16 h-16 rounded-full border border-white/30 flex items-center justify-center backdrop-blur-sm group-hover:scale-110 transition-transform duration-500">
+                <span class="material-symbols-outlined text-white text-4xl" style='font-variation-settings: "FILL" 1;'>play_arrow</span>
+              </div>
             </div>
-          </div>
+          </button>
+        </div>
+        <div class="border-t border-white/10 px-5 py-4">
+          <p class="font-manrope text-sm md:text-base font-medium uppercase tracking-[0.18rem] text-white">One Way Road</p>
+          <p class="font-newsreader text-base italic text-white/70">The Great Gatsby</p>
         </div>
       </div>
     </section>
   </main>
 
+  <script>
+    (() => {
+      const menuButton = document.querySelector("[data-menu-button]");
+      const mobileMenu = document.querySelector("[data-mobile-menu]");
+      const menuIcon = menuButton?.querySelector(".material-symbols-outlined");
+
+      if (!menuButton || !mobileMenu || !menuIcon) {
+        return;
+      }
+
+      const closeMenu = () => {
+        mobileMenu.classList.add("hidden");
+        menuButton.setAttribute("aria-expanded", "false");
+        menuIcon.textContent = "menu";
+        document.body.classList.remove("overflow-hidden");
+      };
+
+      const openMenu = () => {
+        mobileMenu.classList.remove("hidden");
+        menuButton.setAttribute("aria-expanded", "true");
+        menuIcon.textContent = "close";
+        document.body.classList.add("overflow-hidden");
+      };
+
+      menuButton.addEventListener("click", () => {
+        const isOpen = !mobileMenu.classList.contains("hidden");
+        if (isOpen) {
+          closeMenu();
+          return;
+        }
+        openMenu();
+      });
+
+      mobileMenu.querySelectorAll("a").forEach((link) => {
+        link.addEventListener("click", closeMenu);
+      });
+
+      window.addEventListener("resize", () => {
+        if (window.innerWidth >= 768) {
+          closeMenu();
+        }
+      });
+    })();
+  </script>
+
+  <script>
+    (() => {
+      const useFallbackThumbnail = (thumbnail) => {
+        const fallbackSrc = thumbnail.getAttribute("data-thumbnail-fallback");
+
+        if (!fallbackSrc || thumbnail.dataset.thumbnailFallbackApplied === "true") {
+          return;
+        }
+
+        thumbnail.dataset.thumbnailFallbackApplied = "true";
+        thumbnail.src = fallbackSrc;
+      };
+
+      document.querySelectorAll("[data-youtube-thumbnail]").forEach((thumbnail) => {
+        thumbnail.addEventListener("error", () => {
+          useFallbackThumbnail(thumbnail);
+        });
+
+        thumbnail.addEventListener("load", () => {
+          if (thumbnail.naturalWidth < 300) {
+            useFallbackThumbnail(thumbnail);
+          }
+        });
+      });
+
+      const videoEmbeds = document.querySelectorAll("[data-youtube-embed]");
+
+      videoEmbeds.forEach((embed) => {
+        const trigger = embed.querySelector("[data-youtube-trigger]");
+        const videoId = embed.getAttribute("data-video-id");
+        const videoTitle = embed.getAttribute("data-video-title") || "YouTube video";
+
+        if (!trigger || !videoId) {
+          return;
+        }
+
+        trigger.addEventListener("click", () => {
+          const iframe = document.createElement("iframe");
+          iframe.className = "absolute inset-0 h-full w-full";
+          iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0`;
+          iframe.title = videoTitle;
+          iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
+          iframe.allowFullscreen = true;
+          iframe.referrerPolicy = "strict-origin-when-cross-origin";
+
+          embed.replaceChildren(iframe);
+        }, { once: true });
+      });
+    })();
+  </script>
 </body>
 </html>

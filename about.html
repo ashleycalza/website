@@ -89,37 +89,107 @@
       background-color: #000000;
       color: #e5e2e1;
     }
+    @media (min-width: 768px) {
+      html {
+        scrollbar-color: rgba(197, 198, 205, 0.5) #000000;
+        scrollbar-width: thin;
+      }
+      html::-webkit-scrollbar {
+        width: 10px;
+      }
+      html::-webkit-scrollbar-track {
+        background: #000000;
+      }
+      html::-webkit-scrollbar-thumb {
+        background: rgba(197, 198, 205, 0.5);
+        border-radius: 999px;
+        border: 2px solid #000000;
+      }
+      html::-webkit-scrollbar-thumb:hover {
+        background: rgba(197, 198, 205, 0.68);
+      }
+    }
   </style>
 </head>
 
 <body class="font-body selection:bg-secondary selection:text-on-secondary">
   <!-- TopNavBar -->
-  <nav class="fixed top-0 w-full z-50 bg-[#000000]/70 backdrop-blur-md">
-    <div class="flex justify-between items-center px-6 md:px-12 py-6 w-full max-w-screen-2xl mx-auto">
-      <div class="font-newsreader text-2xl tracking-tight text-white font-headline uppercase tracking-widest">
-        ASHLEY CALZA
-      </div>
-
-      <div class="hidden md:flex items-center gap-10">
-        <a class="font-headline tracking-widest uppercase text-white hover:text-[#b9c7e4] transition-colors duration-400 hover:scale-105 transition-transform" href="index.html">HOME</a>
-        <a class="font-headline tracking-widest uppercase text-white border-b border-white pb-1 hover:scale-105 transition-transform duration-400" href="about.html">ABOUT</a>
-        <a class="font-headline tracking-widest uppercase text-white hover:text-[#b9c7e4] transition-colors duration-400 hover:scale-105 transition-transform" href="media.html">MEDIA</a>
-        <a class="font-headline tracking-widest uppercase text-white hover:text-[#b9c7e4] transition-colors duration-400 hover:scale-105 transition-transform" href="gallery.html">GALLERY</a>
-        <a class="font-headline tracking-widest uppercase text-white hover:text-[#b9c7e4] transition-colors duration-400 hover:scale-105 transition-transform" href="casting.html">FOR CASTING</a>
-        <a class="font-headline tracking-widest uppercase text-white hover:text-[#b9c7e4] transition-colors duration-400 hover:scale-105 transition-transform" href="contact.html">CONTACT</a>
-      </div>
-
-      <!-- Mobile Menu Toggle -->
-      <button class="md:hidden text-on-surface">
-        <span class="material-symbols-outlined">menu</span>
-      </button>
+  <nav class="fixed top-0 w-full z-50 bg-[#000000] flex justify-between items-center px-12 py-6 max-w-full">
+    <div class="font-newsreader text-2xl tracking-widest text-[#e5e2e1] uppercase" style="color: rgb(255, 255, 255);">
+      ASHLEY CALZA
     </div>
+
+    <div class="hidden md:flex items-center gap-10">
+      <a class="font-headline tracking-widest uppercase text-white hover:scale-105 transition-transform duration-400"
+         href="index.html"
+         style="color: rgb(255, 255, 255);">
+        HOME
+      </a>
+
+      <a class="font-headline tracking-widest uppercase text-white border-b border-white pb-1 hover:scale-105 transition-transform duration-400"
+         href="about.html"
+         style="color: rgb(255, 255, 255); border-color: rgb(255, 255, 255);">
+        ABOUT
+      </a>
+
+      <a class="font-headline tracking-widest uppercase text-white hover:scale-105 transition-transform duration-400"
+         href="media.html"
+         style="color: rgb(255, 255, 255);">
+        MEDIA
+      </a>
+
+      <a class="font-headline tracking-widest uppercase text-white hover:scale-105 transition-transform duration-400"
+         href="gallery.html"
+         style="color: rgb(255, 255, 255);">
+        GALLERY
+      </a>
+
+      <a class="font-headline tracking-widest uppercase text-white hover:scale-105 transition-transform duration-400"
+         href="casting.html"
+         style="color: rgb(255, 255, 255);">
+        FOR CASTING
+      </a>
+
+      <a class="font-headline tracking-widest uppercase text-white hover:scale-105 transition-transform duration-400"
+         href="contact.html"
+         style="color: rgb(255, 255, 255);">
+        CONTACT
+      </a>
+    </div>
+
+    <!-- Mobile Menu Toggle -->
+    <button
+      aria-controls="mobile-menu"
+      aria-expanded="false"
+      aria-label="Toggle navigation menu"
+      class="md:hidden text-[#e5e2e1]"
+      data-menu-button
+      type="button"
+      style="color: rgb(255, 255, 255);"
+    >
+      <span class="material-symbols-outlined">menu</span>
+    </button>
   </nav>
+
+  <div
+    class="md:hidden fixed top-[88px] left-0 right-0 z-[45] hidden border-t border-white/10 bg-[#000000]"
+    data-mobile-menu
+    id="mobile-menu"
+  >
+    <div class="flex flex-col gap-6 px-12 py-8">
+      <a class="font-headline tracking-widest uppercase text-white hover:scale-105 transition-transform duration-400 w-fit" href="index.html">HOME</a>
+      <a class="font-headline tracking-widest uppercase text-white border-b border-white pb-1 w-fit" href="about.html">ABOUT</a>
+      <a class="font-headline tracking-widest uppercase text-white hover:scale-105 transition-transform duration-400 w-fit" href="media.html">MEDIA</a>
+      <a class="font-headline tracking-widest uppercase text-white hover:scale-105 transition-transform duration-400 w-fit" href="gallery.html">GALLERY</a>
+      <a class="font-headline tracking-widest uppercase text-white hover:scale-105 transition-transform duration-400 w-fit" href="casting.html">FOR CASTING</a>
+      <a class="font-headline tracking-widest uppercase text-white hover:scale-105 transition-transform duration-400 w-fit" href="contact.html">CONTACT</a>
+    </div>
+  </div>
 
   <!-- Main Content: Side-by-Side Split Layout -->
   <main class="pt-24 md:pt-0 min-h-screen flex flex-col md:flex-row bg-[#000000]">
     <!-- Left: Headshot Photo -->
-    <section class="w-full md:w-1/2 h-[614px] md:h-screen sticky top-0 overflow-hidden p-8 md:p-16 lg:p-24" style="background-color: #000000;">
+    <section class="w-full md:w-1/2 h-[614px] md:h-screen md:sticky md:top-0 overflow-hidden p-8 md:p-16 lg:p-24" style="background-color: #000000;">
       <img
         alt="Ashley Calza portrait"
         class="w-full h-full object-cover object-contain rounded-lg"
@@ -153,43 +223,56 @@
           </p>
 
           <p style="color: rgb(255, 255, 255);">
-            When I’m not performing, I’m usually collaging old magazines, working on a puzzle, or somewhere on a hiking trail pretending I didn’t slightly lose.
+            When I’m not performing, I’m usually collaging old magazines, working on a puzzle, or somewhere on a hiking trail pretending I'm not slightly lost.
           </p>
         </div>
       </div>
     </section>
   </main>
 
-  <!-- Footer -->
-  <footer class="w-full py-12 bg-[#000000] flex flex-col items-center justify-center px-8" style="background-color: #000000; border-top: none;">
-    <div class="flex flex-col items-center gap-6">
-      <p class="font-manrope text-[10px] uppercase tracking-[0.1rem] text-[#c5c6cd]" style="color: rgb(255, 255, 255);"><br></p>
-    </div>
-  </footer>
+  <script>
+    (() => {
+      const menuButton = document.querySelector("[data-menu-button]");
+      const mobileMenu = document.querySelector("[data-mobile-menu]");
+      const menuIcon = menuButton?.querySelector(".material-symbols-outlined");
 
-  <!-- Bottom Nav for Mobile -->
-  <nav class="md:hidden fixed bottom-0 left-0 right-0 bg-[#000000]/90 backdrop-blur-xl border-t border-outline-variant/10 px-6 py-4 z-50">
-    <div class="flex justify-between items-center text-[#c5c6cd]">
-      <a class="flex flex-col items-center gap-1" href="index.html" style="color: rgb(255, 255, 255);">
-        <span class="material-symbols-outlined">home</span>
-        <span class="text-[10px] font-label uppercase">Home</span>
-      </a>
+      if (!menuButton || !mobileMenu || !menuIcon) {
+        return;
+      }
 
-      <a class="flex flex-col items-center gap-1" href="about.html" style="color: rgb(255, 255, 255);">
-        <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">person</span>
-        <span class="text-[10px] font-label uppercase">About</span>
-      </a>
+      const closeMenu = () => {
+        mobileMenu.classList.add("hidden");
+        menuButton.setAttribute("aria-expanded", "false");
+        menuIcon.textContent = "menu";
+        document.body.classList.remove("overflow-hidden");
+      };
 
-      <a class="flex flex-col items-center gap-1" href="casting.html" style="color: rgb(255, 255, 255);">
-        <span class="material-symbols-outlined">theater_comedy</span>
-        <span class="text-[10px] font-label uppercase">Casting</span>
-      </a>
+      const openMenu = () => {
+        mobileMenu.classList.remove("hidden");
+        menuButton.setAttribute("aria-expanded", "true");
+        menuIcon.textContent = "close";
+        document.body.classList.add("overflow-hidden");
+      };
 
-      <a class="flex flex-col items-center gap-1" href="contact.html" style="color: rgb(255, 255, 255);">
-        <span class="material-symbols-outlined">mail</span>
-        <span class="text-[10px] font-label uppercase">Contact</span>
-      </a>
-    </div>
-  </nav>
+      menuButton.addEventListener("click", () => {
+        const isOpen = !mobileMenu.classList.contains("hidden");
+        if (isOpen) {
+          closeMenu();
+          return;
+        }
+        openMenu();
+      });
+
+      mobileMenu.querySelectorAll("a").forEach((link) => {
+        link.addEventListener("click", closeMenu);
+      });
+
+      window.addEventListener("resize", () => {
+        if (window.innerWidth >= 768) {
+          closeMenu();
+        }
+      });
+    })();
+  </script>
 </body>
 </html>
