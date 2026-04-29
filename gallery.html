@@ -83,7 +83,13 @@
     .body-manrope { font-family: 'Manrope', sans-serif; }
     .glass-nav { backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
     .vignette-overlay { background: radial-gradient(circle, transparent 0%, rgba(0, 0, 0, 0.4) 100%); }
-    html { scroll-behavior: smooth; }
+    html {
+      scroll-behavior: smooth;
+      overscroll-behavior-x: none;
+    }
+    body {
+      overscroll-behavior-x: none;
+    }
     .material-symbols-outlined {
       font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
     }
@@ -106,6 +112,7 @@
       -ms-overflow-style: none;
       overscroll-behavior-x: contain;
       padding-inline: 1.5rem;
+      touch-action: pan-x;
     }
     .gallery-scroll-container::-webkit-scrollbar {
       display: none;
